@@ -1,0 +1,347 @@
+/*-- scss:rules --*/
+
+// Override Reveal.js defaults for 4:3 aspect ratio
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal .slide {
+    padding: 0.5em 2em;
+}
+
+// Headings customization
+.reveal h1 {
+    color: $color-primary;
+    font-size: 1.8em;
+    margin: 0 0 0.6em 0;
+    font-weight: 700;
+}
+
+.reveal h2 {
+    color: $color-secondary;
+    font-size: 1.4em;
+    margin: 0em -2em 0.4em -1.5em;
+    font-weight: 600;
+    border-bottom: 2px solid $color-secondary;
+    padding: 0 2em 0.2em 1.5em;
+    width: calc(100% + 4em);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+.reveal h3 {
+    color: $color-tertiary;
+    font-size: 1.15em;
+    margin: 0.5em 0 0.3em 0;
+    font-weight: 600;
+}
+
+// Text and lists
+.reveal p, .reveal li {
+    margin: 0.3em 0;
+    font-size: 0.9em;
+}
+
+.reveal ul, .reveal ol {
+    margin: 0.4em 0;
+    padding-left: 1.5em;
+}
+
+.reveal li {
+    margin: 0.2em 0;
+}
+
+// Images
+.reveal img {
+    max-width: 100%;
+    height: auto;
+}
+
+.reveal img[style*="width"] {
+    max-width: none !important;
+}
+
+.reveal .centered-image {
+    display: block;
+    margin: 0.8em auto;
+}
+
+.reveal .centered-image-small {
+    display: block;
+    margin: 0.8em auto;
+    width: 10% !important;
+    max-width: none !important;
+}
+
+.reveal .fixed-height-420 {
+    height: 420px !important;
+    width: auto !important;
+    max-width: 100%;
+    display: block;
+    margin: 0.8em auto;
+}
+
+// Links
+.reveal a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+.reveal a:hover {
+    text-decoration: underline;
+}
+
+// Strong and emphasis
+.reveal strong {
+    font-weight: 600;
+}
+
+.reveal em {
+    font-style: italic;
+}
+
+// Blockquotes
+.reveal blockquote {
+    display: block;
+    position: relative;
+    color: $text-muted;
+    width: unset;
+    margin: var(--r-block-margin) auto;
+    padding: 0.625rem 1.75rem;
+    border-left: 0.25rem solid $text-muted;
+    font-style: normal;
+    background: none;
+    box-shadow: none;
+}
+
+// Figure classes with fixed pixel sizes
+.reveal figure {
+    margin: 0;
+    text-align: center;
+}
+
+.reveal figure img {
+    display: block;
+    margin: 0 auto;
+}
+
+// Classes pour animation auto-animate des images
+.img-large {
+    height: 550px !important;
+    opacity: 1 !important;
+}
+
+.img-small {
+    height: 200px !important;
+    opacity: 0.3 !important;
+}
+
+.img-large-methods {
+    width: 100% !important;
+    opacity: 1 !important;
+}
+
+.img-small-methods {
+    width: 30% !important;
+    opacity: 0.3 !important;
+}
+
+.reveal figcaption {
+    font-size: 0.75em;
+    color: $text-muted;
+    text-align: center;
+    margin-top: 0.3em;
+    font-style: italic;
+}
+
+.reveal .slide {
+    padding: 0em 0em !important;
+}
+
+.centered-image {
+    display: block;
+    margin: 0.8em auto;
+}
+
+// Title slide
+.reveal section.title {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.reveal section.title h1 {
+    font-size: 2em;
+    margin-bottom: 0.4em;
+}
+
+// Highlight box
+.highlight-box {
+    background-color: $color-highlight-bg;
+    border-left: 4px solid $color-primary;
+    padding: 0.8em 1em;
+    margin: 0.6em 0;
+    border-radius: 4px;
+}
+
+.highlight-box strong {
+    color: $color-primary;
+}
+
+// Info box
+.info-box {
+    background-color: $color-surface;
+    border-left: 4px solid $color-primary;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-radius: 4px;
+    margin-top: 0.25em;
+    margin-bottom: 0.0em;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+// Logos
+.logos-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 2em;
+}
+
+// Force logos-container to display flex even inside <p>
+.reveal p:has(.logos-container) {
+    display: contents;
+}
+
+.reveal .logos-container {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.8em;
+    flex-wrap: nowrap;
+}
+
+.reveal .logo {
+    max-height: 70px !important;
+    height: 70px !important;
+    width: auto !important;
+    object-fit: contain;
+    display: inline-block !important;
+    margin: 0 !important;
+    flex-shrink: 1;
+}
+
+.reveal img.logo {
+    max-height: 70px !important;
+    height: 70px !important;
+    width: auto !important;
+    max-width: 100%;
+}
+
+.reveal .logo + .logo {
+    margin-left: 1em !important;
+}
+
+// Plan items
+.plan-item {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.plan-badge {
+    background-color: $color-primary;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+
+.plan-title {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.plan-image {
+    width: auto;
+    height: 270px !important;
+}
+
+.plan-item-dimmed {
+    opacity: 0.3;
+    filter: grayscale(80%) blur(1px);
+    transition: all 0.3s ease;
+}
+
+.plan-item-dimmed .plan-badge {
+    background-color: $text-muted;
+}
+
+// Info box dimmed (for progressive reveal - now replaced by fragments)
+.info-box-dimmed {
+    opacity: 0.3;
+    filter: grayscale(80%) blur(1px);
+    transition: all 0.3s ease;
+}
+
+// Black section
+.black-section {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.6em -2em -0.5em -2em;
+    padding: 1em 2em;
+    width: calc(100% + 4em);
+    box-sizing: border-box;
+    flex: 1;
+}
+
+// Invert colors
+.invert-colors {
+    filter: invert(1);
+}
+
+// Custom fragment: blur effect
+.reveal .slides section .fragment.blur {
+    filter: blur(5px);
+    opacity: 0.3;
+}
+
+.reveal .slides section .fragment.blur.visible {
+    filter: none;
+    opacity: 1;
+}
+
+// Blur effect sans fragment (pour éléments blurés dès le début)
+.reveal .slides section .blur {
+    filter: blur(3px) grayscale(100%);
+    opacity: 0.5;
+}
+
+.reveal .slides section .blur-light {
+    filter: blur(2px);
+    opacity: 0.5;
+}
+
+// Caption
+.caption {
+    font-size: 0.75em;
+    color: $text-muted;
+    text-align: center;
+    margin-top: 0.3em;
+    font-style: italic;
+}

@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+
+// Import des fichiers thématiques standards
+@import '_colors.scss';
+
+/*-- scss:rules --*/
+
+@import '_base.scss';
+@import '_columns.scss';
+@import '_utilities.scss';
+@import '_tables.scss';
+@import '_publications.scss';
+// Remplacement du crawl standard par le crawl Star Wars
+@import '_crawl_starwars.scss';

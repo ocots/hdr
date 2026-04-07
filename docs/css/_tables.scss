@@ -1,0 +1,43 @@
+// Tables
+.reveal table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.6em 0;
+    font-size: 0.85em;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.reveal th, .reveal td {
+    border: none;
+    padding: 0.6em 1em;
+    text-align: left;
+}
+
+.reveal th {
+    background-color: $color-primary;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+// Zebra striping avec couleurs de la palette
+.reveal tbody tr:nth-child(odd) {
+    background-color: $color-surface;
+}
+
+.reveal tbody tr:nth-child(even) {
+    background-color: $color-surface-lighter;
+}
+
+.reveal tbody tr:hover {
+    background-color: $color-highlight-bg;
+    transition: background-color 0.2s ease;
+}
+
+// Mettre en évidence les nombres importants
+.reveal td strong {
+    color: $color-accent;
+    font-weight: 700;
+}

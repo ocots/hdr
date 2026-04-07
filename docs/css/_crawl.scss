@@ -1,0 +1,64 @@
+// Publications crawl slide (movie credits style)
+:root {
+    --crawl-slide-bg: #ffffff;
+}
+
+.crawl-slide {
+    background-color: var(--crawl-slide-bg) !important;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+// Hide the h2 title in slides containing crawl-slide
+.reveal section:has(.crawl-slide) > h2 {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.crawl-slide h2 {
+    color: $color-primary;
+    text-align: center;
+    margin: 1em 0;
+    border: none;
+    width: auto;
+}
+
+.crawl-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.crawl-content {
+    position: absolute;
+    width: 96%;
+    left: 2%;
+    animation: crawl-up 90s linear infinite;
+}
+
+@keyframes crawl-up {
+    from {
+        transform: translateY(120vh);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.crawl-category {
+    color: $color-secondary;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}

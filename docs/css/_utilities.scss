@@ -1,0 +1,68 @@
+// Color utilities
+.color-primary-bold {
+    color: $color-primary;
+    font-weight: 700;
+}
+
+.color-secondary-bold {
+    color: $color-secondary;
+    font-weight: 700;
+}
+
+.color-tertiary-bold {
+    color: $color-tertiary;
+    font-weight: 700;
+}
+
+.color-accent-bold {
+    color: $color-accent;
+    font-weight: 700;
+}
+
+.gray {
+    color: $text-muted;
+}
+
+// RGB color utilities
+.red {
+    color: #c74b4b;
+}
+
+.red-bold {
+    color: #c74b4b;
+    font-weight: 700;
+}
+
+.green {
+    color: #2d8659;
+}
+
+.green-bold {
+    color: #2d8659;
+    font-weight: 700;
+}
+
+.blue {
+    color: #336699;
+}
+
+.blue-bold {
+    color: #336699;
+    font-weight: 700;
+}
+
+// Bold utility (can be combined with color classes)
+.bold {
+    font-weight: 700;
+}
+
+// Size utilities
+.normal { font-size: 1em; }
+.small { font-size: 0.85em; }
+.tiny { font-size: 0.7em; }
+
+// Spacers
+.spacer-small { margin-bottom: 0.5em; }
+.spacer-medium { margin-bottom: 1em; }
+.spacer-large { margin-bottom: 1.5em; }
+.spacer-xlarge { margin-bottom: 2em; }

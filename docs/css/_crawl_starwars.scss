@@ -1,0 +1,223 @@
+// Publications crawl slide (movie credits style) - Star Wars version
+:root {
+    --crawl-slide-bg: #000000;
+}
+
+.crawl-slide {
+    background-color: var(--crawl-slide-bg) !important;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    
+    // Étoiles en arrière-plan - Étoiles de tailles variées réparties aléatoirement
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3.5px;
+        height: 3.5px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 
+            12vw 15vh 3.5px white,
+            28vw 82vh 3px white,
+            73vw 25vh 4px white,
+            91vw 68vh 3.2px white,
+            15vw 45vh 2.8px white,
+            56vw 91vh 3.8px white,
+            84vw 12vh 2.5px white,
+            37vw 58vh 3.3px white,
+            68vw 73vh 3.6px white,
+            23vw 88vh 2.9px white,
+            92vw 35vh 3.1px white,
+            45vw 15vh 3.4px white,
+            78vw 95vh 2.7px white,
+            31vw 42vh 3.7px white,
+            65vw 28vh 2.6px white,
+            18vw 72vh 3.9px white,
+            88vw 48vh 2.4px white,
+            52vw 85vh 3.2px white,
+            7vw 38vh 3.5px white,
+            95vw 78vh 3px white;
+        animation: twinkle-1 3s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
+    
+    // Couche 2 - Étoiles moyennes réparties aléatoirement
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 
+            8vw 92vh 2px white,
+            22vw 18vh 1.8px white,
+            45vw 75vh 2.2px white,
+            67vw 35vh 1.9px white,
+            89vw 58vh 2.1px white,
+            15vw 62vh 1.7px white,
+            38vw 85vh 2.3px white,
+            72vw 12vh 2px white,
+            95vw 45vh 1.8px white,
+            12vw 28vh 2.2px white,
+            35vw 52vh 1.9px white,
+            58vw 88vh 2.1px white,
+            82vw 38vh 1.7px white,
+            25vw 68vh 2.3px white,
+            48vw 25vh 2px white,
+            71vw 92vh 1.8px white,
+            92vw 72vh 2.2px white,
+            18vw 45vh 1.9px white,
+            42vw 78vh 2.1px white,
+            65vw 15vh 1.7px white,
+            88vw 95vh 2.3px white,
+            32vw 58vh 2px white,
+            55vw 32vh 1.8px white,
+            78vw 68vh 2.2px white,
+            92vw 18vh 1.9px white,
+            15vw 85vh 2.1px white,
+            38vw 42vh 1.7px white,
+            62vw 92vh 2.3px white,
+            85vw 55vh 2px white,
+            28vw 28vh 1.8px white,
+            52vw 72vh 2.2px white,
+            75vw 38vh 1.9px white,
+            98vw 85vh 2.1px white;
+        animation: twinkle-2 4s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
+}
+
+@keyframes twinkle-1 {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes twinkle-2 {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes twinkle-3 {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+// Hide the h2 title in slides containing crawl-slide
+.reveal section:has(.crawl-slide) > h2 {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.crawl-slide h2 {
+    color: #FFD700;
+    text-align: center;
+    margin: 1em 0;
+    border: none;
+    width: auto;
+}
+
+.crawl-container {
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    font-size: 100%;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 150%;
+    perspective: 1600px;
+    text-align: justify;
+}
+
+.crawl-content {
+    position: relative;
+    top: 99999px;
+    transform-origin: 50% 100%;
+    animation: crawl-up 60s linear infinite;
+}
+
+@keyframes crawl-up {
+    0% {
+        top: 120vh;
+        transform: rotateX(15deg) translateZ(0);
+    }
+    100% {
+        top: -8500px;
+        transform: rotateX(18deg) translateZ(-2500px);
+    }
+}
+
+.crawl-category {
+    color: #FFD700;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+// Style spécifique pour les cartes dans la slide publications (Star Wars theme)
+.crawl-slide .publication-card {
+    background-color: transparent;
+    border-left: 8px double #FFD700;
+    border-right: 2px solid rgba(255, 215, 0, 0.3);
+    border-top: 2px solid rgba(255, 215, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3), 2px 2px 8px rgba(0, 0, 0, 0.5);
+    
+    &::before {
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(255, 215, 0, 0.5) 20%, 
+            rgba(255, 215, 0, 0.5) 80%, 
+            transparent 100%);
+    }
+}
+
+.crawl-slide .publication-card-authors {
+    color: #C9B037;
+}
+
+.crawl-slide .publication-card-authors strong {
+    color: #FFD700;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+.crawl-slide .publication-card-title {
+    color: #E6D690;
+}
+
+.crawl-slide .publication-card-journal {
+    color: #B8A060;
+}

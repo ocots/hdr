@@ -1,0 +1,50 @@
+// Publication cards
+.publication-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.publication-card {
+    background-color: $color-surface;
+    border-left: 8px double $color-secondary;
+    border-right: 2px solid lighten($color-secondary, 40%);
+    border-top: 2px solid darken($color-surface, 12%);
+    border-bottom: 2px solid darken($color-surface, 12%);
+    padding: 0.5em 1.2em;
+    border-radius: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.12);
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(128, 77, 0, 0.3) 20%, 
+            rgba(128, 77, 0, 0.3) 80%, 
+            transparent 100%);
+    }
+}
+
+.publication-card-authors {
+    font-size: 0.85em;
+    margin-top: 0.3em;
+}
+
+.publication-card-title {
+    font-style: italic;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    color: #444;
+}
+
+.publication-card-journal {
+    font-size: 0.75em;
+    margin-top: 0.2em;
+    color: $text-muted;
+}

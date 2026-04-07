@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 865.34766 276.64844"
+   version="1.1"
+   id="svg17009"
+   sodipodi:docname="timeline-publications.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   width="865.34766"
+   height="276.64844"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17011"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.4655556"
+     inkscape:cx="277.02804"
+     inkscape:cy="185.59514"
+     inkscape:window-width="1512"
+     inkscape:window-height="916"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg17009" />
+  <!-- Grid -->
+  <defs
+     id="defs16851">
+    <style
+       id="style16849">
+      .grid-line { stroke: #e0e0e0; stroke-width: 1; }
+      .axis-line { stroke: #333; stroke-width: 2; }
+      .year-label { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .thesis-bar { opacity: 0.5; }
+      .pub-circle { fill: #d58a27; }
+      .label-text { font-family: Arial, sans-serif; font-size: 11px; fill: #333; }
+    </style>
+  </defs>
+  <!-- Grid lines (horizontal) -->
+  <line
+     x1="14.847656"
+     y1="26.648438"
+     x2="864.84766"
+     y2="26.648438"
+     class="grid-line"
+     id="line16853" />
+  <line
+     x1="14.847656"
+     y1="66.648438"
+     x2="864.84766"
+     y2="66.648438"
+     class="grid-line"
+     id="line16855" />
+  <line
+     x1="14.847656"
+     y1="106.64845"
+     x2="864.84766"
+     y2="106.64845"
+     class="grid-line"
+     id="line16857" />
+  <line
+     x1="14.847656"
+     y1="146.64844"
+     x2="864.84766"
+     y2="146.64844"
+     class="grid-line"
+     id="line16859" />
+  <line
+     x1="14.847656"
+     y1="186.64844"
+     x2="864.84766"
+     y2="186.64844"
+     class="grid-line"
+     id="line16861" />
+  <line
+     x1="14.847656"
+     y1="226.64844"
+     x2="864.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16863" />
+  <!-- Axes -->
+  <line
+     x1="14.847656"
+     y1="226.64844"
+     x2="864.84766"
+     y2="226.64844"
+     class="axis-line"
+     id="line16865" />
+  <line
+     x1="14.847656"
+     y1="26.648438"
+     x2="14.847656"
+     y2="226.64844"
+     class="axis-line"
+     id="line16867" />
+  <!-- Vertical year lines (1er janvier de chaque année: 2009 à 2026) -->
+  <line
+     x1="14.847656"
+     y1="26.648438"
+     x2="14.847656"
+     y2="226.64844"
+     class="grid-line"
+     id="line16869" />
+  <line
+     x1="64.847656"
+     y1="26.648438"
+     x2="64.847656"
+     y2="226.64844"
+     class="grid-line"
+     id="line16871" />
+  <line
+     x1="114.84766"
+     y1="26.648438"
+     x2="114.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16873" />
+  <line
+     x1="164.84766"
+     y1="26.648438"
+     x2="164.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16875" />
+  <line
+     x1="214.84766"
+     y1="26.648438"
+     x2="214.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16877" />
+  <line
+     x1="264.84766"
+     y1="26.648438"
+     x2="264.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16879" />
+  <line
+     x1="314.84766"
+     y1="26.648438"
+     x2="314.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16881" />
+  <line
+     x1="364.84766"
+     y1="26.648438"
+     x2="364.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16883" />
+  <line
+     x1="414.84766"
+     y1="26.648438"
+     x2="414.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16885" />
+  <line
+     x1="464.84766"
+     y1="26.648438"
+     x2="464.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16887" />
+  <line
+     x1="514.84766"
+     y1="26.648438"
+     x2="514.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16889" />
+  <line
+     x1="564.84766"
+     y1="26.648438"
+     x2="564.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16891" />
+  <line
+     x1="614.84766"
+     y1="26.648438"
+     x2="614.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16893" />
+  <line
+     x1="664.84766"
+     y1="26.648438"
+     x2="664.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16895" />
+  <line
+     x1="714.84766"
+     y1="26.648438"
+     x2="714.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16897" />
+  <line
+     x1="764.84766"
+     y1="26.648438"
+     x2="764.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16899" />
+  <line
+     x1="814.84766"
+     y1="26.648438"
+     x2="814.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16901" />
+  <line
+     x1="864.84766"
+     y1="26.648438"
+     x2="864.84766"
+     y2="226.64844"
+     class="grid-line"
+     id="line16903" />
+  <!-- Year labels (between vertical lines) -->
+  <text
+     x="24.847656"
+     y="246.64844"
+     class="year-label"
+     id="text16905">2009</text>
+  <text
+     x="74.847656"
+     y="246.64844"
+     class="year-label"
+     id="text16907">2010</text>
+  <text
+     x="124.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16909">2011</text>
+  <text
+     x="174.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16911">2012</text>
+  <text
+     x="224.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16913">2013</text>
+  <text
+     x="274.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16915">2014</text>
+  <text
+     x="324.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16917">2015</text>
+  <text
+     x="374.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16919">2016</text>
+  <text
+     x="424.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16921">2017</text>
+  <text
+     x="474.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16923">2018</text>
+  <text
+     x="524.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16925">2019</text>
+  <text
+     x="574.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16927">2020</text>
+  <text
+     x="624.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16929">2021</text>
+  <text
+     x="674.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16931">2022</text>
+  <text
+     x="724.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16933">2023</text>
+  <text
+     x="774.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16935">2024</text>
+  <text
+     x="824.84766"
+     y="246.64844"
+     class="year-label"
+     id="text16937">2025</text>
+  <!-- Y-axis labels -->
+  <text
+     x="-0.15234375"
+     y="231.64844"
+     class="year-label"
+     id="text16939">0</text>
+  <text
+     x="-0.15234375"
+     y="191.64844"
+     class="year-label"
+     id="text16941">1</text>
+  <text
+     x="-0.15234375"
+     y="151.64844"
+     class="year-label"
+     id="text16943">2</text>
+  <text
+     x="-0.15234375"
+     y="111.64845"
+     class="year-label"
+     id="text16945">3</text>
+  <text
+     x="-0.15234375"
+     y="71.648438"
+     class="year-label"
+     id="text16947">4</text>
+  <text
+     x="-0.15234375"
+     y="31.648438"
+     class="year-label"
+     id="text16949">5</text>
+  <!-- Thesis bars -->
+  <!-- O. Cots thèse: 2009.75-2012.75 (oct 2009 - oct 2012) -->
+  <rect
+     x="52.347656"
+     y="26.648438"
+     width="150"
+     height="200"
+     fill="#336699"
+     class="thesis-bar"
+     id="rect16951"
+     style="opacity:0.4" />
+  <!-- O. Cots post-doc: 2012.75-2014.75 (oct 2012 - oct 2014) -->
+  <rect
+     x="202.34766"
+     y="26.648438"
+     width="100"
+     height="200"
+     fill="#336699"
+     class="thesis-bar"
+     id="rect16952"
+     style="opacity:0.4" />
+  <!-- Trait de séparation thèse/post-doc -->
+  <path
+     style="opacity:1;fill:none;stroke:#336699;stroke-width:2;stroke-dasharray:12, 2;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 202.34766,26.648437 V 226.64844"
+     id="path-separation-thesis-postdoc" />
+  <!-- D. Goubinat: 2014.25-2017.50 (avril 2014 - juillet 2017) -->
+  <rect
+     x="277.34766"
+     y="26.648438"
+     width="162.5"
+     height="200"
+     fill="#009966"
+     class="thesis-bar"
+     id="rect16953"
+     style="opacity:0.4" />
+  <!-- Thèse encadrée -->
+  <!-- B. Wembe: 2018.75-2021.75 (oct 2018 - oct 2021) -->
+  <rect
+     x="502.34766"
+     y="26.648438"
+     width="150"
+     height="200"
+     fill="#009966"
+     class="thesis-bar"
+     id="rect16955"
+     style="opacity:0.4" />
+  <!-- Thèse encadrée -->
+  <!-- R. Dutto: 2021.75-2024.75 (oct 2021 - oct 2024) -->
+  <rect
+     x="652.34766"
+     y="26.648438"
+     width="150"
+     height="200"
+     fill="#009966"
+     class="thesis-bar"
+     id="rect16957"
+     style="opacity:0.4" />
+  <!-- Thèse encadrée -->
+  <!-- Publication circles (height based on count) -->
+  <!-- 2009: 0 publications - pas de cercle -->
+  <!-- 2010: 3 publications -->
+  <circle
+     cx="89.847656"
+     cy="106.64845"
+     r="7"
+     class="pub-circle"
+     id="circle16959"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2011: 2 publications -->
+  <circle
+     cx="139.84766"
+     cy="146.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16961"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2012: 2 publications -->
+  <circle
+     cx="189.84766"
+     cy="146.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16963"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2013: 4 publications -->
+  <circle
+     cx="239.84766"
+     cy="66.648438"
+     r="7"
+     class="pub-circle"
+     id="circle16965"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2014: 1 publication -->
+  <circle
+     cx="289.84766"
+     cy="186.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16967"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2015: 1 publication -->
+  <circle
+     cx="339.84766"
+     cy="186.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16969"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2016: 2 publications -->
+  <circle
+     cx="389.84766"
+     cy="146.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16971"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2017: 2 publications -->
+  <circle
+     cx="439.84766"
+     cy="146.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16973"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2018: 1 publication -->
+  <circle
+     cx="489.84766"
+     cy="186.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16975"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2019: 1 publication -->
+  <circle
+     cx="539.84766"
+     cy="186.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16977"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2020: 4 publications -->
+  <circle
+     cx="589.84766"
+     cy="66.648438"
+     r="7"
+     class="pub-circle"
+     id="circle16979"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2021: 2 publications -->
+  <circle
+     cx="639.84766"
+     cy="146.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16981"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2022: 3 publications -->
+  <circle
+     cx="689.84766"
+     cy="106.64845"
+     r="7"
+     class="pub-circle"
+     id="circle16983"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2023: 5 publications -->
+  <circle
+     cx="739.84766"
+     cy="26.648438"
+     r="7"
+     class="pub-circle"
+     id="circle16985"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2024: 4 publications -->
+  <circle
+     cx="789.84766"
+     cy="66.648438"
+     r="7"
+     class="pub-circle"
+     id="circle16987"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- 2025: 1 publication -->
+  <circle
+     cx="839.84766"
+     cy="186.64844"
+     r="7"
+     class="pub-circle"
+     id="circle16989"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" />
+  <!-- Labels -->
+  <text
+     x="127.34766"
+     y="11.648438"
+     text-anchor="middle"
+     class="label-text"
+     style="font-weight:600;font-size:16px"
+     id="text16991">O. Cots</text>
+  <text
+     x="358.59766"
+     y="11.648438"
+     text-anchor="middle"
+     class="label-text"
+     style="font-weight:600;font-size:16px"
+     id="text16993">D. Goubinat</text>
+  <text
+     x="577.34766"
+     y="11.648438"
+     text-anchor="middle"
+     class="label-text"
+     style="font-weight:600;font-size:16px"
+     id="text16995">B. Wembe</text>
+  <text
+     x="727.34766"
+     y="11.648438"
+     text-anchor="middle"
+     class="label-text"
+     style="font-weight:600;font-size:16px"
+     id="text16997">R. Dutto</text>
+  <!-- Legend -->
+  <rect
+     x="14.847656"
+     y="261.64844"
+     width="20"
+     height="15"
+     fill="#336699"
+     class="thesis-bar"
+     id="rect16999"
+     style="stroke-width:1.41421" />
+  <text
+     x="40.847656"
+     y="273.69547"
+     class="label-text"
+     id="text17003"
+     style="font-size:13.3333px">Ma thèse et mon post-doctorat</text>
+  <rect
+     x="242.84766"
+     y="261.64844"
+     width="20"
+     height="15"
+     fill="#009966"
+     class="thesis-bar"
+     id="rect17001"
+     style="stroke-width:1.41421" />
+  <text
+     x="268.84766"
+     y="273.69547"
+     class="label-text"
+     id="text17004"
+     style="font-size:13.3333px">Thèses encadrées</text>
+  <ellipse
+     cx="408.84753"
+     cy="268.64835"
+     class="pub-circle"
+     id="circle17005"
+     style="fill:#d58a27;fill-opacity:1;stroke:#804d00;stroke-width:2.66666;stroke-dasharray:none;stroke-opacity:1"
+     rx="6.6666713"
+     ry="6.6666703" />
+  <text
+     x="422.84766"
+     y="273.69547"
+     class="label-text"
+     id="text17007"
+     style="font-size:13.3333px">Publications par année (soumission)</text>
+  <path
+     style="opacity:1;fill:none;stroke:#000080;stroke-width:2;stroke-dasharray:12, 2;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 651.95911,26.458898 V 227.06542"
+     id="path17925" />
+</svg>

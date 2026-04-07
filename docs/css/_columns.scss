@@ -1,0 +1,134 @@
+// Columns (Quarto native)
+.reveal .columns {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+}
+
+.reveal .columns .column {
+    flex: 1;
+    min-width: 0;
+}
+
+// Force column widths to respect specified percentages
+.reveal .columns .column[style*="width: 2%"],
+.reveal .columns .column[style*="width:2%"] {
+    flex: 0 0 2% !important;
+    max-width: 2% !important;
+}
+
+.reveal .columns .column[style*="width: 5%"],
+.reveal .columns .column[style*="width:5%"] {
+    flex: 0 0 5% !important;
+    max-width: 5% !important;
+}
+
+.reveal .columns .column[style*="width: 10%"],
+.reveal .columns .column[style*="width:10%"] {
+    flex: 0 0 10% !important;
+    max-width: 10% !important;
+}
+
+.reveal .columns .column[style*="width: 20%"],
+.reveal .columns .column[style*="width:20%"] {
+    flex: 0 0 20% !important;
+    max-width: 20% !important;
+}
+
+.reveal .columns .column[style*="width: 25%"],
+.reveal .columns .column[style*="width:25%"] {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+}
+
+.reveal .columns .column[style*="width: 30%"],
+.reveal .columns .column[style*="width:30%"] {
+    flex: 0 0 30% !important;
+    max-width: 30% !important;
+}
+
+.reveal .columns .column[style*="width: 32%"],
+.reveal .columns .column[style*="width:32%"] {
+    flex: 0 0 32% !important;
+    max-width: 32% !important;
+}
+
+.reveal .columns .column[style*="width: 33%"],
+.reveal .columns .column[style*="width:33%"] {
+    flex: 0 0 33% !important;
+    max-width: 33% !important;
+}
+
+.reveal .columns .column[style*="width: 40%"],
+.reveal .columns .column[style*="width:40%"] {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+}
+
+.reveal .columns .column[style*="width: 45%"],
+.reveal .columns .column[style*="width:45%"] {
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+}
+
+.reveal .columns .column[style*="width: 50%"],
+.reveal .columns .column[style*="width:50%"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+.reveal .columns .column[style*="width: 55%"],
+.reveal .columns .column[style*="width:55%"] {
+    flex: 0 0 55% !important;
+    max-width: 55% !important;
+}
+
+.reveal .columns .column[style*="width: 58%"],
+.reveal .columns .column[style*="width:58%"] {
+    flex: 0 0 58% !important;
+    max-width: 58% !important;
+}
+
+.reveal .columns .column[style*="width: 60%"],
+.reveal .columns .column[style*="width:60%"] {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+}
+
+.reveal .columns .column[style*="width: 67%"],
+.reveal .columns .column[style*="width:67%"] {
+    flex: 0 0 67% !important;
+    max-width: 67% !important;
+}
+
+.reveal .columns .column[style*="width: 70%"],
+.reveal .columns .column[style*="width:70%"] {
+    flex: 0 0 70% !important;
+    max-width: 70% !important;
+}
+
+.reveal .columns .column[style*="width: 75%"],
+.reveal .columns .column[style*="width:75%"] {
+    flex: 0 0 75% !important;
+    max-width: 75% !important;
+}
+
+.reveal .columns .column[style*="width: 80%"],
+.reveal .columns .column[style*="width:80%"] {
+    flex: 0 0 80% !important;
+    max-width: 80% !important;
+}
+
+// Column width utilities
+.reveal .column-30 { flex: 0 0 30%; }
+.reveal .column-33 { flex: 0 0 33%; }
+.reveal .column-36 { flex: 0 0 36%; }
+.reveal .column-40 { flex: 0 0 40%; }
+.reveal .column-44 { flex: 0 0 44%; }
+.reveal .column-45 { flex: 0 0 45%; }
+.reveal .column-48 { flex: 0 0 48%; }
+.reveal .column-50 { flex: 0 0 50%; }
+.reveal .column-55 { flex: 0 0 55%; }
+.reveal .column-60 { flex: 0 0 60%; }
+.reveal .column-66 { flex: 0 0 66%; }
+.reveal .column-70 { flex: 0 0 70%; }

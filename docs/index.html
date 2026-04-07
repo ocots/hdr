@@ -1,0 +1,2917 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.36">
+
+  <title>HDR - Olivier Cots</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-6073885e21621030a687b7a4857a5559.css">
+  <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="figures/favicon.svg">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="méthodes-de-résolution-pour-le-contrôle-optimal-géométrique-et-applications" class="title-slide slide level1 title center">
+<h1>Méthodes de résolution pour le contrôle optimal géométrique et applications</h1>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Olivier Cots</strong></p>
+<p><em>HDR - Mercredi 8 avril 2026 - INP Toulouse</em></p>
+</div><div class="column">
+<div class="logos-container">
+<p><img src="figures/logo-IRIT.svg" class="logo" alt="IRIT"> <img src="figures/logo-N7.svg" class="logo" alt="N7"> <img src="figures/logo-Inria.svg" class="logo" alt="Inria"></p>
+</div>
+</div></div>
+<div class="spacer-xlarge">
+
+</div>
+<h2 style="color: var(--color-secondary, #804d00); font-size: 1.4em; margin: 0.6em -2em 0.4em -2em; font-weight: 600; border-bottom: 2px solid var(--color-secondary, #804d00); padding: 0 2em 0.2em 2em; width: calc(100% + 4em); box-sizing: border-box;">
+</h2>
+<div class="spacer-xlarge">
+
+</div>
+<div class="columns">
+<div class="column">
+<p><strong>Rapporteurs</strong></p>
+<ul>
+<li>Moritz Diehl<br>
+Professeur, Université de Fribourg</li>
+<li>Nicolas Petit<br>
+Professeur, Mines ParisTech</li>
+<li>Mario Sigalotti<br>
+Directeur de Recherche Inria Paris</li>
+</ul>
+</div><div class="column">
+<p><strong>Composition du jury</strong></p>
+<ul>
+<li>Joseph Gergaud<br>
+Professeur émérite, INP Toulouse</li>
+<li>Nicolas Petit<br>
+Professeur, Mines ParisTech</li>
+<li>Aude Rondepierre - <span class="color-primary-bold">Présidente du jury</span><br>
+Professeure, INSA Toulouse</li>
+<li>Mario Sigalotti<br>
+Directeur de Recherche Inria Paris</li>
+<li>Romain Veltz<br>
+Chargé de Recherche Inria, UCA</li>
+</ul>
+</div></div>
+</section>
+<section id="parcours" class="slide level2">
+<h2>Parcours</h2>
+<div class="columns" style="gap: 0em !important">
+<div class="column" style="width:33%;">
+<div class="info-box">
+<p><strong>2009–2012</strong><br>
+<strong>Thèse de doctorat</strong></p>
+<div class="spacer-medium">
+
+</div>
+<p><em>Institut de Math. de Bourgogne</em></p>
+<div class="tiny">
+<div class="spacer-medium">
+
+</div>
+<p><em>Contrôle optimal géométrique : méthodes homotopiques et applications</em></p>
+<div class="spacer-xlarge">
+
+</div>
+<p><strong>Composition du jury</strong> :</p>
+<ul>
+<li>J.-M. Coron (Président)</li>
+<li>U. Boscain (Rapporteur)</li>
+<li>E. Trélat (Rapporteur)</li>
+<li>B. Bonnard (Examinateur)</li>
+<li>P. Martinon (Examinateur)</li>
+<li>M. Mirrahimi (Examinateur)</li>
+<li>J.-B. Caillau (Directeur)</li>
+<li>J. Gergaud (Directeur)</li>
+</ul>
+</div>
+</div>
+</div><div class="column">
+<div class="columns" style="gap: 0em !important">
+<div class="column">
+<div class="info-box">
+<p><strong>2012–2014</strong><br>
+<strong>Post-doctorat</strong></p>
+<div class="spacer-medium">
+
+</div>
+<p><em>Inria Sophia Antipolis</em></p>
+<div class="tiny">
+<p><em>Équipe McTAO</em></p>
+</div>
+<div class="spacer-medium">
+
+</div>
+<div class="tiny">
+<p><strong>Encadrants</strong> :</p>
+<ul>
+<li>B. Bonnard,</li>
+<li>J.-B. Pomet</li>
+</ul>
+</div>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>2014–présent</strong><br>
+<strong>Maître de conférences</strong></p>
+<div class="spacer-medium">
+
+</div>
+<p><em>INP-ENSEEIHT / IRIT</em></p>
+<div class="tiny">
+<p><em>Département Sciences du Numérique / Équipe APO</em></p>
+</div>
+<div class="spacer-medium">
+
+</div>
+<div class="tiny">
+<p><strong>Délégation Inria</strong> (2025–2026)<br>
+Équipe McTAO, Sophia Antipolis</p>
+</div>
+</div>
+</div></div>
+<!-- <img src="figures/carte_de_france.png" class="centered-image" alt="Carte de France" width="60%"> -->
+</div></div>
+</section>
+<section id="enseignement" class="slide level2">
+<h2>Enseignement</h2>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Matières enseignées</strong> : Contrôle optimal, Équations différentielles, Mesure et Intégration, Julia, Optimisation…</p>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Localisation</strong> : N7, Prépa INP, TSE, INSA</p>
+<div class="spacer-xlarge">
+
+</div>
+<p><img src="figures/HETD.svg" style="
+      display: block !important;
+      width: 60% !important; 
+      height: auto !important; 
+      margin-left: auto !important;
+      margin-right: auto !important;"></p>
+</section>
+<section id="contrôle-optimal" class="slide level2">
+<h2>Contrôle optimal</h2>
+<p>Pour un système dynamique contrôlé, déterminer une commande qui minimise un critère parmi toutes les commandes admissibles.</p>
+<p><img src="figures/Trans-lunar_injection.svg" style="
+      display: block !important;
+      width: 100% !important; 
+      height: auto !important; 
+      margin-top: 1.5em !important;
+      margin-bottom: 1.5em !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      z-index: 0 !important;"></p>
+<p class="caption" style="
+        text-align: center; 
+        margin-top: 0em;">
+Injection Trans-Lunaire (TLI) : manœuvre d’injection sur trajectoire de transfert Terre–Lune
+</p>
+</section>
+<section id="thématique-de-recherche" class="slide level2">
+<h2>Thématique de recherche</h2>
+<div class="highlight-box">
+<p>Développement d’outils théoriques et numériques issus du <strong>contrôle optimal (géométrique)</strong> pour le calcul de <strong>synthèses (sous-)optimales</strong>.</p>
+</div>
+<div class="columns" style="gap: 0em !important">
+<div class="column" style="width:50%;">
+<ul>
+<li>Système contrôlé : <span class="math inline">\(\dot{x} = f(x,u)\)</span></li>
+<li>Condition initiale : <span class="math inline">\(x_0 \in \mathbf{R}^n\)</span></li>
+<li>Contrôle : <span class="math inline">\(u \in \mathcal{U} \subset L^{\infty}_{\mathrm{loc}}([0,+\infty), \mathbf{R}^m)\)</span></li>
+<li>Coût : <span class="math inline">\(J_{x_0}(u)\)</span></li>
+</ul>
+</div><div class="column">
+<ul>
+<li>Cible : <span class="math inline">\(x_f \in \mathbf{R}^n\)</span> au temps <span class="math inline">\(t_f \ge 0\)</span></li>
+<li><span class="color-accent-bold">Fonction valeur</span> : <span class="math display">\[V(x_0) \coloneqq \inf_{u \in \mathcal{U}} \, \left\{ J_{x_0}(u) \mid x(t_f, x_0, u) = x_f \right\}\]</span></li>
+</ul>
+</div></div>
+<p><strong>Synthèse optimale</strong> : pour un ensemble de conditions initiales <span class="math inline">\(\Omega \subset \mathbf{R}^n\)</span>, calculer <span class="math inline">\(V\)</span> <em>et</em></p>
+<p><span class="math display">\[\bigcup_{x_0 \in \Omega} \left\{ u \in \mathcal{U} \mid V(x_0) = J_{x_0}(u) \right\}.\]</span></p>
+<div class="columns">
+<div class="column">
+<div class="info-box">
+<p><strong>Cas régulier</strong> <span class="small"><span class="small">(mono-hamiltonien)</span></span></p>
+<div class="small">
+<p>Commande lisse ⇒ flot hamiltonien unique.</p>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Outils</strong> : lieux conjugué et de coupure.</p>
+<p><strong>Applications</strong> : Géométrie riemannienne, navigation de Zermelo.</p>
+</div>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>Cas non régulier</strong> <span class="small"><span class="small">(multi-hamiltonien)</span></span></p>
+<div class="small">
+<p>Commande bang-bang / singulière ⇒ concaténation de flots.</p>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Outils</strong> : algèbre de Lie, surfaces de commutation.</p>
+<p><strong>Applications</strong> : IRM, avionique.</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="activité-scientifique" class="slide level2">
+<h2>Activité scientifique</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Production scientifique</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Journaux internationaux (ACL)</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>Conférences internationales (actes)</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>Chapitres d’ouvrages</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Logiciels open-source</td>
+<td><strong>4</strong></td>
+</tr>
+<tr class="odd">
+<td>Conférences invitées</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>Conférences sans actes</td>
+<td>47</td>
+</tr>
+<tr class="odd">
+<td>Séminaires invités</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>Cours en écoles thématiques</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Brevets</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="spacer-medium">
+
+</div>
+<div class="info-box fragment">
+<p>Environ <strong>30 % (50 % depuis 2014)</strong> des articles de journaux et actes de conférences sont co-écrits avec un <strong>doctorant</strong> ou <strong>post-doctorant</strong>.</p>
+</div>
+</div><div class="column" style="margin-left: 2em;">
+<p><strong>Organisation de congrès (4) / écoles (1)</strong></p>
+<ul>
+<li><p><strong>JuliaCon Local Paris 2025</strong><br>
+<span class="tiny">CNAM Paris, 2–3 oct. 2025 – comité d’organisation</span></p></li>
+<li><p><strong>Julia and Optimization Days 2024</strong><br>
+<span class="tiny">Toulouse, 28–30 oct. 2024 – comité local</span></p></li>
+<li><p><span class="color-accent-bold">École de Contrôle Optimal Numérique 2018</span></p>
+<p><span class="tiny">Toulouse, 3–7 sept. 2018 – <span class="gray">avec J. Gergaud, S. Jan</span></span></p></li>
+<li><p><strong>SMAI-MODE 2016</strong>, <strong>KEPASSA 2015</strong></p></li>
+</ul>
+<p><strong>Mini-symposia organisés (6)</strong></p>
+<ul>
+<li><strong>SMAI 2025</strong> <span class="tiny">(Carcans Maubuisson), <span class="gray">avec J. Rouot</span></span></li>
+<li><strong>FGS Optimisation 2024</strong> <span class="tiny">(Gijon)</span></li>
+<li><strong>SMAI 2023</strong> <span class="tiny">(Guadeloupe), <span class="gray">avec L. Dell’Elce</span></span></li>
+<li><strong>ICIAM 2019</strong> <span class="tiny">(Valencia), <span class="gray">avec J.-B. Caillau, P. Martinon</span></span></li>
+<li><strong>SMAI 2019</strong> <span class="tiny">(Guidel), <span class="gray">avec L. Bourdin</span></span></li>
+<li><strong>SMAI 2017</strong> <span class="tiny">(La Tremblade)</span></li>
+</ul>
+</div></div>
+</section>
+<section id="encadrement-doctoral" class="slide level2">
+<h2>Encadrement doctoral</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>3 thèses soutenues</strong></p>
+<ul>
+<li>D. Goubinat (2014–17, CIFRE Thales)<br>
+<span class="gray">avec P. Delpy, J. Gergaud</span></li>
+<li>B. Wembe (2018–21, bourse MESR)<br>
+<span class="gray">avec B. Bonnard, J. Gergaud</span></li>
+<li>R. Dutto (2021–24, CIFRE Vitesco) - <strong>Dérogation</strong><br>
+<span class="gray">avec O. Flebus, S. Jan, S. Laporte, M. Sans</span></li>
+</ul>
+<p><strong>1 post-doctorat</strong> : T. Verron (2016–17), <span class="gray">avec J. Gergaud</span></p>
+</div><div class="column">
+<blockquote>
+<p><strong>Autres encadrements</strong></p>
+<ul>
+<li>4 stages de Master 2</li>
+<li>19 stages de Master 1</li>
+<li>7 projets longs (groupes de 4-5 élèves)</li>
+</ul>
+</blockquote>
+</div></div>
+<div class="spacer-medium">
+
+</div>
+<p><img src="figures/timeline-publications.svg" class="centered-image" style="width: 90% !important; height: auto !important;"></p>
+</section>
+<section id="thèse-rémy-dutto-2021-2024-vitesco-technologies" class="slide level2">
+<h2>Thèse Rémy Dutto (2021-2024) — Vitesco Technologies</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<h3 style="margin: 0;">
+Méthode à deux niveaux et préconditionnement géométrique en contrôle optimal
+</h3>
+<div class="small gray">
+<p>Application au problème de répartition de couple des véhicules hybrides électriques</p>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img src="figures/remy_voiture.jpg" class="centered-image" style="height: 160px; border-radius: 8px; margin-top: -1em;"></p>
+</div></div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Problème de contrôle optimal</strong></p>
+<p><span class="math display">\[
+\begin{equation}
+    \begin{array}{ll}
+    \displaystyle \min_{x,u} \int_{t_0}^{t_f} f^0\big(t, x(t), u(t)\big) ~\mathrm dt \\[1em]
+    \text{s.c.}~~\dot x(t) = f\big(t,x(t), u(t)\big), &amp; t\in [t_0, t_f]~\mathrm{p.p.}, \\[0.5em]
+    \phantom{\text{s.c.}~~} u(t) \in \mathrm U(t), &amp; t\in [t_0, t_f], \\[0.5em]
+    \phantom{\text{s.c.}~~} c\big(x(t_0), x(t_f)\big) = 0.
+    \end{array}
+\end{equation}
+\]</span></p>
+</div><div class="column">
+<p><img src="figures/remy_cmd_example.svg" class="centered-image" style="width: 100%"></p>
+</div></div>
+<p><strong>Changement de paradigme</strong> : au lieu de chercher un contrôle <span class="math inline">\(u(t)\)</span>, on cherche les états intermédiaires <span class="math inline">\(X_i\)</span> en découpant l’intervalle <span class="math inline">\([t_0, t_f]\)</span>.</p>
+<p><img src="figures/remy_discretisation.svg" class="centered-image" width="60%"></p>
+</section>
+<section id="thèse-rémy-dutto-2021-2024-reformulation-équivalente" class="slide level2">
+<h2>Thèse Rémy Dutto (2021-2024) — Reformulation équivalente</h2>
+<div class="spacer-medium">
+
+</div>
+<p>On découpe l’intervalle <span class="math inline">\([t_0, t_f]\)</span> en <span class="math inline">\(N+1\)</span> sous-intervalles <span class="math inline">\(\Delta_i = [t_i, t_{i+1}]\)</span>. Sur chaque <span class="math inline">\(\Delta_i\)</span>, on définit le problème aux conditions initiales et finales <span class="math inline">\(a\in \mathbb{R}^n\)</span> et <span class="math inline">\(b \in \mathbb{R}^n\)</span> fixées</p>
+<p><span class="math display">\[
+\begin{equation}
+    \begin{array}{ll}
+    \displaystyle V_i(a,b) = \min_{x,u}   \int_{t_i}^{t_{i+1}} f^0\big(t, x(t), u(t)\big)~ \mathrm dt &amp;  \\[1em]
+    \text{s.c.}~~ \dot x(t) = f\big(t, x(t), u(t)\big), &amp; t \in \Delta_i~\mathrm{p.p.}, \\[0.5em]
+    \phantom{\text{s.c.}~~} u(t) \in \mathrm U(t), &amp; t \in \Delta_i, \\[0.5em]
+    \phantom{\text{s.c.}~~} x(t_i) = a, \quad x(t_{i+1}) = b.
+    \end{array}
+\end{equation}
+\]</span></p>
+<div class="highlight-box">
+<p>On définit la formulation équivalente suivante</p>
+<p><span class="math display">\[
+\begin{equation}
+    \begin{array}{l}
+    \displaystyle \min_{X} V(X) \coloneqq \displaystyle \sum_{0 \le i \le N} V_i(X_i, X_{i+1}), \\
+    \text{s.c.}~~ c(X_0, X_{N+1}) = 0, \quad X \in \mathcal X,
+    \end{array}
+\end{equation}
+\]</span></p>
+<p>où <span class="math inline">\(X = (X_0, X_1, \ldots, X_{N+1})\)</span> et <span class="math inline">\(\mathcal X \subset (\mathbb{R}^n)^{N+2}\)</span> est l’ensemble des états intermédiaires accessibles.</p>
+<p><span class="color-accent-bold">Si les fonctions valeur <span class="math inline">\(V_i\)</span> et les contrôles optimaux associés sont connus, il suffit de résoudre ce problème.</span></p>
+</div>
+</section>
+<section id="thèse-rémy-dutto-2021-2024-méthode-macro-micro" class="slide level2">
+<h2>Thèse Rémy Dutto (2021-2024) — Méthode Macro-Micro</h2>
+<div class="columns">
+<div class="column">
+<p>Approximation des fonctions valeur <span class="math inline">\(V_i\)</span> par des réseaux de neurones : <span class="color-accent-bold"><span class="math inline">\(V_i \approx C_i\)</span></span>.</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+\textrm{(Macro)} &amp; \displaystyle \left\{ \begin{array}{l}
+     \displaystyle \min_{X} C(X) \coloneqq \sum_{0 \le i \le N} C_i(X_i, X_{i+1}), \\
+     \text{s.c.}~~ X \in \mathring{\mathcal X}, \quad  c(X_0, X_{N+1}) = 0,
+\end{array} \right.
+\end{array}
+\]</span></p>
+<p>pour obtenir <span class="math inline">\(\hat X = (\hat X_0, \dots, \hat X_{N+1})\)</span>, puis résolution des <span class="math inline">\(N+1\)</span> problèmes indépendants sur <span class="math inline">\(\Delta_i = [t_i, t_{i+1}]\)</span> :</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+\textrm{(Micro)} &amp; \displaystyle \left\{ \begin{array}{ll}
+     \displaystyle \min_{x,u} \int_{t_i}^{t_{i+1}} f^0 \big( t, x(t), u(t) \big) ~\mathrm dt, \\[1em]
+     \text{s.c.}~~ \dot x(t) = f \big( t, x(t), u(t) \big), &amp; \\[0.25em]
+     \phantom{\text{s.c.}~~} u(t) \in \mathrm U(t), &amp; \\[0.25em]
+     \phantom{\text{s.c.}~~} x(t_i) = \hat X_i, \quad x(t_{i+1}) = \hat X_{i+1}.
+\end{array} \right.
+\end{array}
+\]</span></p>
+</div><div class="column">
+<p><img src="figures/remy_schema_bilevel.svg" class="centered-image" width="100%"></p>
+<div class="caption">
+<p>Schéma de la méthode Macro-Micro et apprentissage hors-ligne</p>
+</div>
+</div></div>
+</section>
+<section id="thèse-rémy-dutto-2021-2024-résultats" class="slide level2">
+<h2>Thèse Rémy Dutto (2021-2024) — Résultats</h2>
+<div class="columns">
+<div class="column">
+<div class="info-box">
+<p><strong>Ingrédients clés pour les problèmes Micro</strong></p>
+<ul>
+<li>Gradients <span class="math inline">\(\nabla C_i(\hat X_i, \hat X_{i+1})\)</span> pour améliorer l’initialisation</li>
+<li>Préconditionnement géométrique pour accélérer la convergence (article en préparation avec R. Dutto)</li>
+</ul>
+</div>
+<p><img src="figures/remy_erreur.svg" class="centered-image" width="70%" style="margin-top: 0em;"></p>
+<div class="caption" style="margin-top: -1em; position: relative; z-index: 10;">
+<p><strong>Convergence en 2 itérations</strong> grâce aux ingrédients clés</p>
+</div>
+</div><div class="column">
+<p><img src="figures/remy_solution.svg" class="centered-image" width="95%"></p>
+<div class="caption">
+<p>Comparaison solution optimale vs Macro-Micro</p>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column">
+<div class="plan-item">
+<div class="plan-badge">
+<p>1</p>
+</div>
+<div class="plan-title">
+<p>Méthodes numériques et logiciels développés</p>
+</div>
+<p><img src="figures/code.svg" class="plan-image"></p>
+</div>
+<div class="plan-item">
+<div class="plan-badge">
+<p>3</p>
+</div>
+<div class="plan-title">
+<p>Le problème de navigation de Zermelo</p>
+</div>
+<p><img src="figures/zermelo.svg" class="plan-image"></p>
+</div>
+</div><div class="column">
+<div class="plan-item">
+<div class="plan-badge">
+<p>2</p>
+</div>
+<div class="plan-title">
+<p>Géométrie riemannienne et ses extensions</p>
+</div>
+<p><img src="figures/geometry.svg" class="plan-image"></p>
+</div>
+<div class="plan-item">
+<div class="plan-badge">
+<p>4</p>
+</div>
+<div class="plan-title">
+<p>Imagerie médicale</p>
+</div>
+<p><img src="figures/mri.svg" class="plan-image"></p>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column">
+<div class="plan-item">
+<div class="plan-badge">
+<p>1</p>
+</div>
+<div class="plan-title">
+<p>Méthodes numériques et logiciels développés</p>
+</div>
+<p><img src="figures/code.svg" class="plan-image"></p>
+</div>
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>3</p>
+</div>
+<div class="plan-title">
+<p>Le problème de navigation de Zermelo</p>
+</div>
+<p><img src="figures/zermelo.svg" class="plan-image"></p>
+</div>
+</div><div class="column">
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>2</p>
+</div>
+<div class="plan-title">
+<p>Géométrie riemannienne et ses extensions</p>
+</div>
+<p><img src="figures/geometry.svg" class="plan-image"></p>
+</div>
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>4</p>
+</div>
+<div class="plan-title">
+<p>Imagerie médicale</p>
+</div>
+<p><img src="figures/mri.svg" class="plan-image"></p>
+</div>
+</div></div>
+</section>
+<section id="méthodes-numériques-et-logiciels-développés" class="slide level2">
+<h2>Méthodes numériques et logiciels développés</h2>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Trois générations de logiciels (open-source)</strong></p>
+<div class="spacer-medium">
+
+</div>
+<div class="columns" style="gap: 1em !important;">
+<div class="column">
+<div class="info-box">
+<p><strong>HamPath</strong> (2009–2019)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-fortran.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">→</span> <img src="figures/logo-matlab.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">/</span> <img src="figures/logo-python.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>NutoPy</strong> (2019–2022)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-fortran.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">+</span> <img src="figures/logo-python.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>control-toolbox</strong> (2022–présent)</p>
+<div style="display: flex; align-items: center; justify-content: center; margin: 0.2em 0;">
+<p><img src="figures/logo-julia.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div></div>
+<p><img src="figures/timeline-legend.svg" class="centered-image" style="width: 35% !important; height: auto !important; margin-top: 3em !important;"></p>
+<div data-id="fig1" style="text-align: center;">
+<p><img src="figures/timeline-logiciels.svg" class="img-large-methods"></p>
+</div>
+</section>
+<section id="méthodes-indirectes-tir-et-second-ordre-point-conjugué" class="slide level2">
+<h2>Méthodes indirectes : tir et second ordre (point conjugué)</h2>
+<div class="columns">
+<div class="column">
+<div class="info-box">
+<p><strong>Tir simple</strong></p>
+<div class="small">
+<p><span class="color-primary-bold">Cadre régulier</span> : Hamiltonien lisse <span class="math inline">\(H(x,p)\)</span> issu du Principe du Maximum de Pontryagin (PMP) ⇒ système hamiltonien lisse <span class="math display">\[\vec{H} = (\partial_p H, -\partial_x H).\]</span></p>
+<p><span class="color-primary-bold">Application exponentielle</span> :</p>
+<p><span class="math display">\[\exp(t \vec{H})(x_0, p_0)\]</span></p>
+<p>solution au temps <span class="math inline">\(t\)</span> de <span class="math inline">\(\dot{z} = \vec{H}(z),~ z(0) = (x_0,p_0)\)</span></p>
+<p><span class="color-primary-bold">Méthode de tir</span> : résoudre <span class="math inline">\(S(p_0) = 0 ~\text{(Newton)}\)</span></p>
+<p><span class="math display">\[S(p_0) = \pi\bigl(\exp(t_f\vec{H})(x_0,p_0)\bigr) - x_f,\]</span></p>
+<p><span class="math inline">\(\pi(x, p) = x\)</span>.</p>
+</div>
+</div>
+<div class="spacer-small">
+
+</div>
+<div class="info-box fragment blur">
+<p><strong>Tir multiple</strong></p>
+<div class="small">
+<ul>
+<li><span class="color-primary-bold">De stabilité</span> (<span class="gray">H.G. Bock, 1984</span>) : découpage en sous-intervalles, conditions de raccordement.</li>
+<li><span class="color-primary-bold">De structure</span> (<span class="gray">H. Maurer, 1976</span>) : raccord d’arcs de natures différentes (bang, singulier, contraint).<br>
+Inconnues : <span class="math inline">\(p_0\)</span>, temps de commutation <span class="math inline">\(\tau_i\)</span>.</li>
+</ul>
+</div>
+</div>
+</div><div class="column">
+<div class="info-box fragment blur">
+<p><strong>Second ordre (point conjugué)</strong></p>
+<div class="small">
+<p><span class="color-primary-bold">Équation variationnelle</span> : <span class="math inline">\(\delta\dot{z}(t) = \vec{H}'(z(t))\cdot\delta z(t)\)</span></p>
+<ul>
+<li><span class="color-tertiary-bold">Cas régulier</span> (<span class="gray">A. Agrachev, 2004</span>) :
+<ul>
+<li>point conjugué ⇔ singularité de <span class="math inline">\(S'(p_0)\)</span>.</li>
+<li>CN2 et CS2 d’optimalité locale faible et forte.</li>
+</ul></li>
+<li><span class="color-tertiary-bold">Cas singulier</span> (<span class="gray">B. Bonnard, 2003</span>) : algorithmes spécifiques le long d’extrémales singulières (systèmes affines mono-entrée).</li>
+</ul>
+</div>
+</div>
+<div class="spacer-small">
+
+</div>
+<div class="info-box fragment blur">
+<p><strong>Systèmes affines mono-entrée</strong></p>
+<div class="small">
+<p><span class="math display">\[H = H_0 + u\,H_1, \quad u \in [-1,1]\]</span></p>
+<p><span class="color-primary-bold">Contrôle singulier</span> (<span class="math inline">\(\{ \cdot , \cdot \}\)</span> est le crochet de Poisson) : <span class="math display">\[u_s(x, p) = -\frac{ \{ H_0, \{ H_0, H_1 \} \}(x, p) }{ \{ H_1, \{ H_0, H_1 \} \}(x, p) }\]</span></p>
+<p><span class="color-primary-bold">Les trois hamiltoniens</span> :</p>
+<ul>
+<li><span class="math inline">\(H_\pm = H_0 \pm H_1\)</span></li>
+<li><span class="math inline">\(H_s = H_0 + u_s H_1\)</span></li>
+</ul>
+</div>
+</div>
+</div></div>
+</section>
+<section id="hampath-contexte-et-motivations" class="slide level2">
+<h2>HamPath — Contexte et motivations</h2>
+<div class="columns">
+<div class="column" style="width:67%;">
+<p><strong>Difficultés des méthodes indirectes</strong></p>
+<ul>
+<li><span class="color-primary-bold">Sensibilité à l’initialisation</span> : méthode de Newton (tir) nécessitant une bonne initialisation du vecteur adjoint <span class="math inline">\(p_0\)</span> et des instants de commutations.</li>
+<li><span class="color-primary-bold">Structure a priori</span> : dans le cas multi-hamiltonien, il faut connaître la séquence d’arcs (bang, singuliers, contraints) avant de résoudre.</li>
+</ul>
+<div class="spacer-small">
+
+</div>
+<p><strong>Deux stratégies de résolution pour initilialiser la méthode indirecte</strong></p>
+<ol type="1">
+<li><span class="color-primary-bold">Méthode directe</span> : problème discrétisé</li>
+<li><span class="color-primary-bold">Homotopie</span> : famille <span class="math inline">\(P(\lambda)\)</span>, <span class="math inline">\(\lambda \in [0,1]\)</span></li>
+</ol>
+</div><div class="column">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Année</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BNDSCO</td>
+<td>1989</td>
+<td>indirect</td>
+</tr>
+<tr class="even">
+<td>cotcot</td>
+<td>2007</td>
+<td>indirect</td>
+</tr>
+<tr class="odd">
+<td>Shoot</td>
+<td>2008</td>
+<td>indirect</td>
+</tr>
+<tr class="even">
+<td><strong>HamPath</strong></td>
+<td><strong>2009</strong></td>
+<td><strong>indirect</strong></td>
+</tr>
+<tr class="odd">
+<td>Bocop</td>
+<td>2010</td>
+<td>direct</td>
+</tr>
+<tr class="even">
+<td>ACADO</td>
+<td>2011</td>
+<td>direct</td>
+</tr>
+<tr class="odd">
+<td>GPOPS</td>
+<td>2013</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="spacer-small">
+
+</div>
+<div class="fragment blur">
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><strong>Présentation de HamPath</strong></p>
+<p>Depuis 2009 (<span class="gray">avec J.-B. Caillau et J. Gergaud</span>). Suivi de chemin différentiel (homotopie).</p>
+</div><div class="column">
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-fortran.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">→</span> <img src="figures/logo-matlab.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">/</span> <img src="figures/logo-python.svg" style="height: 60px;"></p>
+</div>
+</div></div>
+<p><span class="color-primary-bold">Applications</span> : avionique (<span class="gray">avec D. Goubinat</span>), géométrie riemannienne, navigation de Zermelo (<span class="gray">avec B. Wembe</span>), imagerie médicale, véhicule électrique, thermodynamique, transfert orbital.</p>
+<div class="spacer-small">
+
+</div>
+<blockquote>
+<p>Dès 2012 avant ma soutenance de thèse : B. Daoud (problème aux 3 corps spatial, thèse 2012), M. Lapert (contrôle quantique IRM, thèse 2012).</p>
+</blockquote>
+</div>
+</section>
+<section id="hampath-homotopie" class="slide level2">
+<h2>HamPath — Homotopie</h2>
+<p><span class="color-primary-bold">Fonction homotopique</span> : <span class="math display">\[
+    \begin{array}{rcll}
+        S \colon &amp; \mathbf{R}^{N+1} &amp; \longrightarrow &amp; \mathbf{R}^N \\
+                  &amp; (y, \lambda) &amp; \longmapsto     &amp; S(y, \lambda) \coloneqq S_\lambda(y)
+    \end{array}
+\]</span></p>
+<div class="spacer-small">
+
+</div>
+<p><span class="color-primary-bold">Hypothèse de régularité</span> : <span class="math inline">\(0\)</span> valeur régulière de <span class="math inline">\(S\)</span> ⇒ <span class="math inline">\(\text{rang}(S'(y, \lambda)) = N\)</span> sur <span class="math inline">\(S^{-1}(\{0\})\)</span>.</p>
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column">
+<p><span class="color-primary-bold">Méthode homotopique</span></p>
+<p>Calcul de chemin de zéros <span class="math inline">\(r(s) = (y(s), \lambda(s))\)</span> paramétré par l’abscisse curviligne <span class="math inline">\(s\)</span>.</p>
+<div class="fragment blur" data-fragment-index="1">
+<ul>
+<li><p><span class="color-tertiary-bold">Prédiction</span> (<span class="gray">E. L. Allgower, K. Georg, 2003</span>) : intégration de <span class="math display">\[
+  \dot{r}(s) = T(r(s))
+\]</span> où <span class="math inline">\(T(r)\)</span> est l’unique vecteur tangent unitaire bien orienté dans <span class="math inline">\(\ker S'(r)\)</span> (<code>dopri5</code>/<code>radau</code> pour l’intégration et <code>Tapenade</code> pour la différentiation automatique).</p></li>
+<li><p><span class="color-tertiary-bold">Correction</span> (<span class="gray">E. Hairer, 1997</span>) : Newton modifié avec factorisation QR (<code>LAPACK</code>) pour résoudre <span class="math display">\[
+  \min_{r} \|r - r_{\text{pred}}\| \quad \text{s.c.} \quad S(r) = 0.
+\]</span></p></li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment blur" data-fragment-index="1">
+<figure>
+<img src="figures/prediction-correction.svg" class="centered-image" width="100%" style="margin-top: 0em;">
+<figcaption>
+Méthode de Prédiction-Correction
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="hampath-homotopie-étendue-et-monitoring" class="slide level2">
+<h2>HamPath — Homotopie étendue et monitoring</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Thèse de D. Goubinat</strong> <span class="small gray"><span class="small gray">CIFRE Thales Avionics, 2014–17</span></span></p>
+<p>Lors du suivi homotopique, la <span class="color-primary-bold">structure</span> peut changer : disparition d’arc, insertion d’arc singulier ou contraint.</p>
+<div class="spacer-medium">
+
+</div>
+<p><span class="color-primary-bold">Boucle d’homotopie étendue</span> :</p>
+<ol type="1">
+<li><span class="color-tertiary-bold">Suivi</span> du chemin de zéros</li>
+<li><span class="color-tertiary-bold">Détection</span> par monitoring (callback)</li>
+<li><span class="color-tertiary-bold">Mise à jour</span> de <span class="math inline">\(S(y,\lambda)\)</span> (structure, dimension)</li>
+<li><span class="color-tertiary-bold">Poursuite</span> du suivi</li>
+</ol>
+<p><span class="color-primary-bold">Complémentarité numérique-théorique</span> :</p>
+<ul>
+<li>Synthèses en temps court pour comprendre les changements (<span class="gray">B. Bonnard, L. Faubourg &amp; E. Trélat</span>).<br>
+</li>
+<li>Homotopie et monitoring pour le reste.</li>
+</ul>
+<div class="spacer-medium">
+
+</div>
+</div><div class="column" style="margin-left: 1em;">
+<div class="fragment blur" data-fragment-index="1">
+<p><span class="color-primary-bold">Application : montée d’avion</span></p>
+<p>Min. temps de montée, contraintes CAS &amp; Mach.<br>
+Homotopie sur <span class="math inline">\((\phi_{\max}, \psi_{\max})\)</span> depuis VMO/MMO.</p>
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img src="figures/cartographie.svg" class="centered-image" width="100%" style="margin-top: -1.5em;"></p>
+<div class="caption">
+<p>Cartographie des structures dans le plan <span class="math inline">\((\phi_{\max}, \psi_{\max})\)</span>.</p>
+</div>
+</div><div class="column tiny">
+<p><strong>Légende</strong></p>
+<ul>
+<li><span class="math inline">\(\sigma_\pm\)</span> : arc bang</li>
+<li><span class="math inline">\(\sigma_s\)</span> : arc singulier</li>
+<li><span class="color-tertiary-bold"><span class="math inline">\(\sigma_{c_1}\)</span></span> : arc contraint (CAS)</li>
+<li><span class="color-accent-bold"><span class="math inline">\(\sigma_{c_2}\)</span></span> : arc contraint (Mach)</li>
+</ul>
+</div></div>
+<div class="highlight-box">
+<p><span class="color-accent-bold">Résultat clé</span> : émergence de la procédure CAS/Mach <span class="math display">\[
+\sigma_- \sigma_{c_1} \sigma_{c_2} \sigma_+
+\]</span> utilisée opérationnellement et comparaison.</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="nutopy-interopérabilité-et-limitations" class="slide level2">
+<h2>NutoPy — Interopérabilité et limitations</h2>
+<div class="columns">
+<div class="column">
+<div class="highlight-box">
+<p><strong>Objectif : interopérabilité</strong></p>
+<p>Projet Inria ADT (2018, avec J.-B. Caillau, P. Martinon) : Faciliter la combinaison des méthodes directes et indirectes.</p>
+</div>
+</div><div class="column">
+<div class="spacer-medium">
+
+</div>
+<p><span class="color-primary-bold">Stratégie efficace</span> :</p>
+<ul>
+<li>Méthode directe ⇒ première solution + structure</li>
+<li>Méthode indirecte ⇒ raffinement de la solution</li>
+</ul>
+</div></div>
+<div style="position: relative; min-height: 150px;">
+<div class="fragment fade-in-then-out" data-fragment-index="1" style="position: absolute; width: 100%;">
+<div class="columns" style="gap: 0em !important;">
+<div class="column">
+
+</div><div class="column">
+<div class="info-box">
+<p><strong>HamPath</strong> (2009)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-fortran.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">→</span> <img src="figures/logo-matlab.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">/</span> <img src="figures/logo-python.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 2.2em 0;">
+<p><img src="figures/plus.svg" style="height: 30px;"></p>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>Bocop</strong> (2010)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-cpp.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column">
+
+</div></div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2" style="position: absolute; width: 100%; top: 0;">
+<div class="columns" style="gap: 0em !important;">
+<div class="column">
+
+</div><div class="column">
+<div class="info-box">
+<p><strong>NutoPy</strong> (2019)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-fortran.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">+</span> <img src="figures/logo-python.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 2.2em 0;">
+<p><img src="figures/plus.svg" style="height: 30px;"></p>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>Bocop</strong> (2010)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-cpp.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column">
+
+</div></div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3" style="position: absolute; width: 100%; top: 0;">
+<div class="columns" style="gap: 0em !important;">
+<div class="column">
+
+</div><div class="column">
+<div class="info-box">
+<p><strong>NutoPy</strong> (2019)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-fortran.svg" style="height: 60px;"> <span style="color: #666; vertical-align: 1em; margin-left: 0.5em; margin-right: 0.5em;">+</span> <img src="figures/logo-python.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 2.2em 0;">
+<p><img src="figures/plus.svg" style="height: 30px;"></p>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>Bocop</strong> (2010)</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.2em 0;">
+<p><img src="figures/logo-cpp.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column">
+
+</div></div>
+</div>
+<div class="fragment" data-fragment-index="4" style="position: absolute; width: 100%; top: 0;">
+<div class="columns" style="gap: 0em !important;">
+<div class="column">
+
+</div><div class="column">
+<div class="info-box">
+<p><strong>control-toolbox</strong> (2022)</p>
+<div style="display: flex; align-items: center; justify-content: center; margin: 0.2em 0;">
+<p><img src="figures/logo-julia.svg" style="height: 60px;"></p>
+</div>
+</div>
+</div><div class="column">
+
+</div></div>
+<div class="spacer-medium">
+
+</div>
+<p><span class="color-accent-bold">Transition stratégique</span></p>
+<p>⇒ OptimalControl.jl (control-toolbox) sous l’impulsion de J. Gergaud et avec l’aide du SED Inria Sophia Antipolis.</p>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+<div class="spacer-xlarge">
+
+</div>
+<p><span class="color-accent-bold">Limitation</span> : Définition du problème <strong>deux fois</strong></p>
+<div class="spacer-medium">
+
+</div>
+<div class="blur-light">
+<p><strong>Innovation : différentielle d’ordre 2</strong> <span class="math display">\[
+\exp(t\vec{H})''(x_0, p_0)
+\]</span> en plus de <span class="math inline">\(\exp(t\vec{H})'(x_0, p_0)\)</span>.</p>
+<p><span class="color-primary-bold">Application : calcul du lieu conjugué par homotopie</span> sur des variétés de dimension 2. Besoin des dérivées de <span class="math inline">\(H\)</span> jusqu’à l’ordre 3 (par différentiation automatique via Tapenade).</p>
+</div>
+</div>
+</section>
+<section id="control-toolbox-optimalcontrol.jl" class="slide level2" data-transition="zoom" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">control-toolbox — OptimalControl.jl</h2>
+<div class="columns">
+<div class="column">
+<div data-id="box1">
+
+</div>
+</div><div class="column">
+
+</div></div>
+</section>
+<section id="control-toolbox-optimalcontrol.jl-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">control-toolbox — OptimalControl.jl</h2>
+<div class="columns">
+<div class="column">
+<div data-id="box1">
+<p><span class="color-primary-bold">Définition du problème</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href=""></a><span class="im">using</span> <span class="bu">OptimalControl</span></span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a>t0 <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb1-4"><a href=""></a>tf <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb1-5"><a href=""></a>x0 <span class="op">=</span> [<span class="op">-</span><span class="fl">1</span>, <span class="fl">0</span>]</span>
+<span id="cb1-6"><a href=""></a>xf <span class="op">=</span> [<span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb1-7"><a href=""></a></span>
+<span id="cb1-8"><a href=""></a>ocp <span class="op">=</span> <span class="pp">@def</span> <span class="cf">begin</span></span>
+<span id="cb1-9"><a href=""></a></span>
+<span id="cb1-10"><a href=""></a>    t <span class="op">∈</span> [t0, tf], time</span>
+<span id="cb1-11"><a href=""></a>    x <span class="op">∈</span> R², state</span>
+<span id="cb1-12"><a href=""></a>    u <span class="op">∈</span> R, control</span>
+<span id="cb1-13"><a href=""></a></span>
+<span id="cb1-14"><a href=""></a>    <span class="fu">x</span>(t0) <span class="op">==</span> x0</span>
+<span id="cb1-15"><a href=""></a>    <span class="fu">x</span>(tf) <span class="op">==</span> xf</span>
+<span id="cb1-16"><a href=""></a></span>
+<span id="cb1-17"><a href=""></a>    <span class="fu">ẋ</span>(t) <span class="op">==</span> [<span class="fu">x₂</span>(t), <span class="fu">u</span>(t)]</span>
+<span id="cb1-18"><a href=""></a></span>
+<span id="cb1-19"><a href=""></a>    <span class="fl">0.5</span><span class="fu">∫</span>( <span class="fu">u</span>(t)<span class="op">^</span><span class="fl">2</span> ) <span class="op">→</span> min</span>
+<span id="cb1-20"><a href=""></a></span>
+<span id="cb1-21"><a href=""></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment blur" data-fragment-index="2">
+<p><span class="color-primary-bold">Méthode directe</span></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href=""></a><span class="im">using</span> <span class="bu">NLPModelsIpopt</span></span>
+<span id="cb2-2"><a href=""></a>sol <span class="op">=</span> <span class="fu">solve</span>(ocp)</span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb2-5"><a href=""></a><span class="fu">plot</span>(sol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="spacer-medium">
+
+</div>
+<p><span class="color-primary-bold">Méthode indirecte</span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href=""></a><span class="co"># maximising control: H = p₁x₂ + p₂u - u²/2</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">u</span>(x, p) <span class="op">=</span> p[<span class="fl">2</span>]</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a><span class="co"># Hamiltonian flow</span></span>
+<span id="cb3-5"><a href=""></a>f <span class="op">=</span> <span class="fu">Flow</span>(ocp, u)</span>
+<span id="cb3-6"><a href=""></a></span>
+<span id="cb3-7"><a href=""></a><span class="co"># state projection, p being the costate</span></span>
+<span id="cb3-8"><a href=""></a><span class="fu">π</span>((x, p)) <span class="op">=</span> x</span>
+<span id="cb3-9"><a href=""></a></span>
+<span id="cb3-10"><a href=""></a><span class="co"># shooting function</span></span>
+<span id="cb3-11"><a href=""></a><span class="fu">S</span>(p0) <span class="op">=</span> <span class="fu">π</span>( <span class="fu">f</span>(t0, x0, p0, tf) ) <span class="op">-</span> xf</span>
+<span id="cb3-12"><a href=""></a></span>
+<span id="cb3-13"><a href=""></a><span class="co"># solve S(p0) = 0</span></span>
+<span id="cb3-14"><a href=""></a><span class="op">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="control-toolbox-design-et-performances" class="slide level2">
+<h2>control-toolbox — Design et performances</h2>
+<p><span class="color-primary-bold">Architecture modulaire et extensible</span></p>
+<ul>
+<li><span class="color-tertiary-bold">DSL parsing</span> : MLStyle.jl pour pattern matching sur AST généré par <code>@def</code></li>
+<li><span class="color-tertiary-bold">Modelers-Solvers</span> : séparation claire, ADNLPModels/ExaModels + Ipopt/Knitro/MadNLP/MadNCL/Uno</li>
+<li><span class="color-tertiary-bold">Différentiation automatique</span> : ForwardDiff.jl, DifferentiationInterface.jl</li>
+<li><span class="color-tertiary-bold">Méthodes indirectes</span> : DifferentialEquations.jl + NonlinearSolve.jl</li>
+<li><span class="color-tertiary-bold">Solveurs linéaires</span> : MUMPS.jl (CPU), CUDSS.jl (GPU)</li>
+</ul>
+<div class="columns">
+<div class="column">
+<div class="fragment blur">
+<p><span class="color-primary-bold">Support GPU</span></p>
+<p>ExaModels + MadNLP + CUDSS ⇒ accélération GPU.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href=""></a>sol <span class="op">=</span> <span class="fu">solve</span>(ocp, <span class="op">:</span>gpu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="spacer-medium">
+
+</div>
+<div class="fragment blur">
+<p><span class="color-primary-bold">Banque de problèmes - OptimalControlProblems.jl</span></p>
+<p><img src="figures/problems.png" class="centered-image" width="100%"></p>
+</div>
+</div><div class="column">
+<div class="fragment blur">
+<p><span class="color-primary-bold">Suite de benchmarking - CTBenchmarks.jl</span></p>
+<p><img src="figures/cpu_profile_plot.svg" class="centered-image" width="100%"></p>
+</div>
+</div></div>
+</section>
+<section id="control-toolbox-conclusion" class="slide level2">
+<h2>control-toolbox — Conclusion</h2>
+<div style="text-align: center; font-size: 1.3em;">
+<p><span class="color-accent-bold">Perspectives</span></p>
+</div>
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="color-primary-bold">Performance et HPC</span></p>
+<ul>
+<li>CTBenchmarks.jl : comparaisons systématiques</li>
+<li>CTFlows.jl : abstraction des flots, support GPU</li>
+<li>Pas de temps adaptatif (direct et indirect)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="color-primary-bold">Fondations théoriques</span></p>
+<ul>
+<li>Extension du DSL et transformations symboliques</li>
+<li>Intégration ModelingToolkit</li>
+<li>Régularisation par points intérieurs</li>
+</ul>
+</div></div>
+<div class="spacer-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="color-primary-bold">Applications</span></p>
+<ul>
+<li>Grande taille : IRM, contrôle quantique, ML</li>
+<li>Homotopie via BifurcationKit.jl</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="color-primary-bold">Tutoriels et documentation</span></p>
+<ul>
+<li>Nouveaux tutoriels : turnpike, temps libres</li>
+<li>Contraintes d’état et problèmes hybrides</li>
+</ul>
+</div></div>
+<div class="spacer-medium">
+
+</div>
+<div style="text-align: center; font-size: 1.3em;">
+<p><span class="color-accent-bold">Contributions — 32 contributeurs, 8463 commits</span></p>
+</div>
+<div class="spacer-large">
+
+</div>
+<p>ocots (5957), jbcaillau (1170), PierreMartinon (477), 0Yassine0 (200), BaptisteCbl (151), j-l-s (140), AnasXbouali (71), AmielMetier (65), gergaud (55), agustinyabo (24), antoinepichon03 (23), HediChennoufi (19), baillietn (15), Yassin-Moukan (13), alegoupil (11), amontoison (10), Ousmane-prog (10), joseph-gergaud (9), YouriRenoud (9), ade4569 (6), srcansiz (5), michel2323 (4), oameye (3), gdalle (3), remydutto (3), abavoil (2), tmigot (2), loxim3 (2), mjacobse (1), Lupylune (1), frapac (1), BWembe (1)</p>
+</section>
+<section class="slide level2">
+
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column">
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>1</p>
+</div>
+<div class="plan-title">
+<p>Méthodes numériques et logiciels développés</p>
+</div>
+<p><img src="figures/code.svg" class="plan-image"></p>
+</div>
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>3</p>
+</div>
+<div class="plan-title">
+<p>Le problème de navigation de Zermelo</p>
+</div>
+<p><img src="figures/zermelo.svg" class="plan-image"></p>
+</div>
+</div><div class="column">
+<div class="plan-item">
+<div class="plan-badge">
+<p>2</p>
+</div>
+<div class="plan-title">
+<p>Géométrie riemannienne et ses extensions</p>
+</div>
+<p><img src="figures/geometry.svg" class="plan-image"></p>
+</div>
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>4</p>
+</div>
+<div class="plan-title">
+<p>Imagerie médicale</p>
+</div>
+<p><img src="figures/mri.svg" class="plan-image"></p>
+</div>
+</div></div>
+</section>
+<section id="géométrie-riemannienne-problème-géodésique" class="slide level2">
+<h2>Géométrie riemannienne — Problème géodésique</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="spacer-medium">
+
+</div>
+<p><strong>Problématique</strong> : recherche de plus courts chemins sur une variété riemannienne <span class="math inline">\((M, g)\)</span></p>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Minimisation de l’énergie</strong></p>
+<p><span class="math display">\[
+\min_{q(\cdot)} \int_0^T g_{q(t)}(\dot{q}(t), \dot{q}(t)) \, \mathrm{d}t,~~ q(0) = q_0,~~ q(T) = q_1
+\]</span></p>
+<div class="spacer-medium">
+
+</div>
+<div class="info-box">
+<p><strong>Hamiltonien</strong></p>
+<p><span class="math display">\[H(q,p) = \frac{1}{2} g^{-1}_q(p,p)\]</span></p>
+<p><strong>Système hamiltonien</strong></p>
+<p><span class="math display">\[\vec{H}(q,p) = \left(\frac{\partial H}{\partial p}, -\frac{\partial H}{\partial q}\right)\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/ellipsoid_conjugate_locus.png" class="centered-image" width="90%"></p>
+<div class="caption">
+<p>Ellipsoïde oblat : géodésiques (bleu) et lieu conjugué (rouge).</p>
+</div>
+</div></div>
+</section>
+<section id="géométrie-riemannienne-points-conjugués-et-de-coupure" class="slide level2">
+<h2>Géométrie riemannienne — Points conjugués et de coupure</h2>
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="info-box">
+<p><strong>Point de coupure</strong></p>
+<p>Point où la géodésique cesse d’être globalement minimisante :</p>
+<ul>
+<li>Soit un <span class="color-primary-bold">point conjugué</span></li>
+<li>Soit un <span class="color-primary-bold">point de séparation</span> : deux géodésiques distinctes se rencontrent au même temps</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/ellipsoid_cut_locus.png" class="centered-image" width="90%"></p>
+<div class="caption">
+<p>Lieu conjugué (rouge) et lieu de coupure (noir). Les extrémités du segment de coupure sont des points de rebroussement du lieu conjugué.</p>
+</div>
+</div></div>
+<div class="spacer-small">
+
+</div>
+<div class="highlight-box">
+<p>Le <span class="color-accent-bold">lieu de coupure</span> détermine la synthèse optimale : pour <span class="math inline">\(q_1 \notin \mathrm{Cut}(q_0)\)</span>, il existe une unique géodésique minimisante joignant <span class="math inline">\(q_0\)</span> et <span class="math inline">\(q_1\)</span>.</p>
+</div>
+<!-- ## Surfaces de révolution — Système mécanique
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.info-box}
+
+**Métrique de révolution** — forme normale de Darboux
+
+$$g = \mathrm{d}\varphi^2 + m(\varphi) \, \mathrm{d}\theta^2$$
+
+$\theta$ cyclique ⇒ [$\dot{p}_\theta = 0$]{.color-accent-bold} (Clairaut)
+
+::: {.spacer-medium}
+:::
+
+[Intégrabilité de Liouville]{.color-tertiary-bold} : deux intégrales premières en involution ($H$ et $p_\theta$)
+:::
+
+:::
+::: {.column width="50%"}
+::: {.info-box}
+
+**Système mécanique**
+
+$$\dot{\varphi}^2 = 1 - V(\varphi; p_\theta)$$
+
+où $\displaystyle V(\varphi; p_\theta) = \frac{p_\theta^2}{m(\varphi)}$ est le [potentiel effectif]{.color-accent-bold}
+
+:::
+:::
+::::
+
+::: {.spacer-medium}
+:::
+
+:::: {.columns}
+::: {.column width="70%"}
+
+**Exemple** (sphère : $m(\varphi) = \sin^2\!\varphi$)
+
+::: {.spacer-medium}
+:::
+
+<img src="figures/potentiels.svg" class="centered-image" width="100%">
+
+:::
+::: {.column .tiny}
+
+::: {.spacer-medium}
+:::
+
+**Trois régimes**
+
+- **Méridiens** : $p_\theta = 0$, $V \equiv 0$
+  
+trajectoires passant par les pôles
+  
+- **Oscillants** : $0 < p_\theta^2 < 1$
+
+oscillations périodiques autour de l'équateur
+  
+- **Équateur** : $p_\theta^2 = 1$
+
+unique parallèle géodésique
+
+:::
+:::: -->
+</section>
+<section class="slide level2">
+
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column">
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>1</p>
+</div>
+<div class="plan-title">
+<p>Méthodes numériques et logiciels développés</p>
+</div>
+<p><img src="figures/code.svg" class="plan-image"></p>
+</div>
+<div class="plan-item">
+<div class="plan-badge">
+<p>3</p>
+</div>
+<div class="plan-title">
+<p>Le problème de navigation de Zermelo</p>
+</div>
+<p><img src="figures/zermelo.svg" class="plan-image"></p>
+</div>
+</div><div class="column">
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>2</p>
+</div>
+<div class="plan-title">
+<p>Géométrie riemannienne et ses extensions</p>
+</div>
+<p><img src="figures/geometry.svg" class="plan-image"></p>
+</div>
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>4</p>
+</div>
+<div class="plan-title">
+<p>Imagerie médicale</p>
+</div>
+<p><img src="figures/mri.svg" class="plan-image"></p>
+</div>
+</div></div>
+</section>
+<section id="problème-de-navigation-de-zermelo-formulation-2d" class="slide level2">
+<h2>Problème de navigation de Zermelo — Formulation (2D)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="info-box">
+<p><strong>Problème de navigation</strong></p>
+<p>Soit <span class="math inline">\((M, g)\)</span> une variété riemannienne de dimension 2 et <span class="math inline">\(F_0\)</span> un champ de vecteurs (le <span class="color-accent-bold">courant</span>).</p>
+<div class="spacer-medium">
+
+</div>
+<p><span class="color-primary-bold">Objectif</span> : minimiser le temps de parcours entre <span class="math inline">\(q_0\)</span> et <span class="math inline">\(q_1\)</span></p>
+<div class="spacer-medium">
+
+</div>
+<p><span class="color-primary-bold">Dynamique</span> : <span class="math inline">\(\dot{q} = F_0(q) + u_1 F_1(q) + u_2 F_2(q)\)</span></p>
+<p>avec <span class="math inline">\(|u|_g \leq 1\)</span> et <span class="math inline">\((F_1, F_2)\)</span> repère orthonormé local.</p>
+</div>
+</div><div class="column">
+<div class="info-box">
+<p><strong>Classification selon l’intensité du courant</strong></p>
+<ul>
+<li><span class="math inline">\(|F_0|_g &lt; 1\)</span> : <span class="color-tertiary-bold">courant faible</span> <span class="small">(Finsler/Randers)</span></li>
+<li><span class="math inline">\(|F_0|_g = 1\)</span> : <span class="color-tertiary-bold">courant modéré</span> <span class="small">(une direction anormale)</span></li>
+<li><span class="math inline">\(|F_0|_g &gt; 1\)</span> : <span class="color-tertiary-bold">courant fort</span> <span class="small">(deux directions anormales)</span></li>
+</ul>
+</div>
+</div></div>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Transport du disque des vitesses admissibles</strong></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="figures/zermelo-courants-faible.svg" class="centered-image" width="80%"></p>
+</div><div class="column" style="width:33%;">
+<p><img src="figures/zermelo-courants-modere.svg" class="centered-image" width="80%"></p>
+</div><div class="column" style="width:33%;">
+<p><img src="figures/zermelo-courants-fort.svg" class="centered-image" width="80%"></p>
+</div></div>
+</section>
+<section id="navigation-de-zermelo-historique-et-collaborations" class="slide level2">
+<h2>Navigation de Zermelo — Historique et collaborations</h2>
+<div class="info-box">
+<p><strong>Contexte initial</strong></p>
+<p>Problème classique d’optimisation de trajectoire d’un navire soumis à un courant (Carathéodory, Zermelo 1931).</p>
+</div>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Chronologie des travaux</strong></p>
+<ul>
+<li><p><strong>2018</strong> — Discussion avec C. Balsa et J. Gergaud (ECON 2018, Toulouse) sur le contrôle de particules dans un champ de vortex ponctuels → stage M2 de <span class="color-accent-bold">B. Wembe</span></p></li>
+<li><p><strong>2018-2021</strong> — Thèse de <span class="color-accent-bold">B. Wembe</span> (co-encadrement avec B. Bonnard et J. Gergaud)</p></li>
+</ul>
+<div class="spacer-medium">
+
+</div>
+<table style="table-layout: fixed; width: 100%;">
+<colgroup>
+<col style="width: 8%;">
+<col style="width: 22%;">
+<col style="width: 24%;">
+<col style="width: 46%;">
+</colgroup>
+<thead>
+<tr>
+<th>
+Année
+</th>
+<th>
+Publication
+</th>
+<th>
+Co-auteurs
+</th>
+<th>
+Sujet
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>2020</strong>
+</td>
+<td>
+CONTROLO 2020
+</td>
+<td>
+Balsa, Gergaud, <strong>Wembe</strong>
+</td>
+<td>
+Minimum energy control of passive tracers advection
+</td>
+</tr>
+<tr>
+<td>
+<strong>2021</strong>
+</td>
+<td>
+ESAIM COCV
+</td>
+<td>
+Bonnard, <strong>Wembe</strong>
+</td>
+<td>
+A Zermelo navigation problem with a vortex singularity
+</td>
+</tr>
+<tr>
+<td>
+<strong>2022</strong>
+</td>
+<td>
+Systems &amp; Control Lett.
+</td>
+<td>
+Bonnard, Gergaud, <strong>Wembe</strong>
+</td>
+<td>
+Abnormal geodesics — fan shape of small time balls
+</td>
+</tr>
+<tr>
+<td>
+<strong>2023</strong>
+</td>
+<td>
+ESAIM COCV
+</td>
+<td>
+Bonnard, <strong>Wembe</strong>
+</td>
+<td>
+Zermelo navigation on surfaces of revolution
+</td>
+</tr>
+<tr>
+<td>
+<strong>2024</strong>
+</td>
+<td>
+AIMS Sciences
+</td>
+<td>
+Bonnard, Privat, Trélat
+</td>
+<td>
+Zermelo navigation on the sphere with revolution metrics
+</td>
+</tr>
+<tr>
+<td>
+<strong>2026</strong>
+</td>
+<td>
+Nonlinearity
+</td>
+<td>
+Bonnard, Privat
+</td>
+<td>
+Applications to micromagnetism
+</td>
+</tr>
+<tr>
+<td>
+<strong>2026</strong>
+</td>
+<td>
+En préparation
+</td>
+<td>
+Dadjo, <strong>Wembe</strong>
+</td>
+<td>
+Regularity of the value function and cut locus
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="navigation-de-zermelo-singularité-cusp-et-optimalité" class="slide level2">
+<h2>Navigation de Zermelo — Singularité cusp et optimalité</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="info-box">
+<p><strong>Théorème</strong></p>
+<p>Soit <span class="math inline">\(\sigma(\cdot)\)</span> une géodésique <span class="green bold">anormale</span> rencontrant <span class="math inline">\(\{|F_0|_g = 1\}\)</span> en <span class="math inline">\(q_1\)</span> au temps <span class="math inline">\(t_1\)</span>.</p>
+<div class="spacer-medium">
+
+</div>
+<p>Si <span class="math inline">\(\dot\alpha(t_1) \neq 0\)</span> et <span class="math inline">\(|F_0|_g = 1\)</span> est un niveau régulier, alors <span class="math inline">\(\sigma(\cdot)\)</span> présente un <span class="color-accent-bold">cusp semi-cubique</span> <span class="math inline">\((t^2, t^3)\)</span> en <span class="math inline">\(q_1\)</span>.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img src="figures/zermelo_walker_unfolding.svg" style="width: 100%; height: auto;"></p>
+</div></div>
+<div class="spacer-medium">
+
+</div>
+<p><strong>Déploiement universel</strong> : <span class="blue bold"><span class="math inline">\(\mathbf{C}\)</span>-nœud (point isolé + branche lisse)</span> → <span class="green bold">cusp</span> → <span class="red bold"><span class="math inline">\(\mathbf{R}\)</span>-nœud (auto-intersection)</span></p>
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="info-box">
+<p><strong>Théorème : Optimalité au voisinage d’un cusp semi-cubique</strong></p>
+<ol type="1">
+<li><p><span class="green bold">Arc anormal</span> : <span class="color-accent-bold">temps-minimal</span> de <span class="math inline">\(q_0\)</span> au cusp <span class="math inline">\(q_1\)</span></p>
+<p>→ <span class="math inline">\(q_1\)</span> est un <span class="bold">point conjugué</span></p></li>
+<li><p><span class="red bold">Hyperboliques</span> : <span class="color-accent-bold">auto-intersectantes</span>, optimales jusqu’au 2nd recoupement <span class="math inline">\(q_2\)</span> avec l’anormale</p>
+<p>→ <span class="math inline">\(q_2\)</span> est un <span class="bold">point de coupure</span></p></li>
+<li><p><span class="blue bold">Elliptiques</span> : <span class="color-accent-bold">temps-maximales</span>, confinées en courant fort <span class="math inline">\(\{|F_0|_g &gt; 1\}\)</span></p></li>
+</ol>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img src="figures/zermelo-cusp.svg" style="width: 100%; height: auto;"></p>
+</div></div>
+</section>
+<section id="navigation-de-zermelo-topologies-et-discontinuité-de-la-fonction-valeur" class="slide level2">
+<h2>Navigation de Zermelo — Topologies et discontinuité de la fonction valeur</h2>
+<p><strong>Fonction temps minimal</strong> : <span class="math inline">\(T_{q_0}(q) = \inf\{t : q \text{ accessible depuis } q_0 \text{ en temps } t\}\)</span></p>
+<p><strong>Boule zermélienne</strong> : <span class="math inline">\(B_Z(q_0, t) = \{q : T_{q_0}(q) &lt; t\}\)</span></p>
+<div class="spacer-small">
+
+</div>
+<div class="info-box">
+<div class="columns">
+<div class="column" style="width:58%;">
+<p><span class="color-primary-bold">Deux topologies</span> en courant fort :</p>
+<ul>
+<li><span class="math inline">\(\mathcal{T}\)</span> : topologie de <span class="math inline">\((M, g)\)</span></li>
+<li><span class="math inline">\(\mathcal{T}_Z\)</span> : topologie des boules zerméliennes (<span class="color-accent-bold">strictement plus fine</span>)</li>
+</ul>
+</div><div class="column" style="width:2%;">
+<div style="height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<p>⇒</p>
+</div>
+</div><div class="column">
+<div style="height: 180px; display: flex; flex-direction: column; justify-content: center;">
+<p><span class="math inline">\(T_{q_0}\)</span> est continue pour <span class="math inline">\(\mathcal{T}_Z\)</span> mais <span class="color-accent-bold">discontinue</span> pour <span class="math inline">\(\mathcal{T}\)</span>.</p>
+</div>
+</div></div>
+</div>
+<div class="spacer-medium">
+
+</div>
+<p>Cette discontinuité vient des <span class="color-tertiary-bold">anormales</span> (directions limites) → <span class="color-accent-bold">perte de contrôlabilité locale</span>.</p>
+<div class="spacer-medium">
+
+</div>
+<div class="columns" style="gap: 0;">
+<div class="column" style="width:2%;">
+<div style="height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<div style="transform: rotate(-90deg); white-space: nowrap; font-weight: 700; color: $color-secondary;">
+<p>Autres contributions</p>
+</div>
+</div>
+</div><div class="column" style="width:32%;">
+<p><img src="figures/zermelo-small-sphere.svg" class="centered-image" style="height: 400px;"></p>
+<div class="caption">
+<p>Forme éventail des petites sphères</p>
+</div>
+</div><div class="column" style="width:32%;">
+<p><img src="figures/zermelo-reeb-vortex-disk.svg" class="centered-image" style="height: 400px;"></p>
+<div class="caption">
+<p>Cas vortex : feuilletage de Reeb</p>
+</div>
+</div><div class="column" style="width:32%;">
+<p><img src="figures/zermelo-landau-billiard.svg" class="centered-image" style="height: 400px;"></p>
+<div class="caption">
+<p>Ferromagnétisme : billard de Landau-Lifshitz</p>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column">
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>1</p>
+</div>
+<div class="plan-title">
+<p>Méthodes numériques et logiciels développés</p>
+</div>
+<p><img src="figures/code.svg" class="plan-image"></p>
+</div>
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>3</p>
+</div>
+<div class="plan-title">
+<p>Le problème de navigation de Zermelo</p>
+</div>
+<p><img src="figures/zermelo.svg" class="plan-image"></p>
+</div>
+</div><div class="column">
+<div class="plan-item blur">
+<div class="plan-badge">
+<p>2</p>
+</div>
+<div class="plan-title">
+<p>Géométrie riemannienne et ses extensions</p>
+</div>
+<p><img src="figures/geometry.svg" class="plan-image"></p>
+</div>
+<div class="plan-item">
+<div class="plan-badge">
+<p>4</p>
+</div>
+<div class="plan-title">
+<p>Imagerie médicale</p>
+</div>
+<p><img src="figures/mri.svg" class="plan-image"></p>
+</div>
+</div></div>
+</section>
+<section id="imagerie-médicale-contraste-en-irm" class="slide level2">
+<h2>Imagerie médicale — Contraste en IRM</h2>
+<div class="info-box">
+<p><strong>Problème de contraste en IRM</strong></p>
+<p>Maximiser le contraste entre deux tissus (spins) via une impulsion radiofréquence (RF) optimale.</p>
+</div>
+<div style="position: relative; min-height: 400px;">
+<div class="fragment fade-out" data-fragment-index="1" style="position: absolute; width: 100%;">
+<p><img src="figures/fig-contrast.svg" class="centered-image" style="width: 60%; height: auto;"></p>
+<div class="publication-card">
+<p><span class="color-primary-bold">Validation in vitro</span> : laboratoire de S. Glaser (TU München)</p>
+<div class="spacer-medium">
+
+</div>
+<div class="publication-card-authors">
+<p>B. Bonnard, O. Cots, S. Glaser, M. Lapert, D. Sugny, Y. Zhang</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric optimal control of the contrast imaging problem in nuclear magnetic resonance</p>
+</div>
+<div class="publication-card-journal">
+<p>IEEE Trans. Automat. Control (2012)</p>
+</div>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="1" style="position: absolute; width: 100%; top: 0;">
+<div class="columns">
+<div class="column" style="width:25%;">
+
+</div><div class="column" style="width:60%;">
+<div class="spacer-xlarge">
+
+</div>
+<p><strong>Équations de Bloch</strong> <span style="font-size: 0.7em; color: #6a737d;"><em>F. Bloch, prix Nobel 1952</em></span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\dot y(t) &amp; = -\Gamma\, y(t) - u(t)\, z(t), \\[0.5em]
+\dot z(t) &amp; = \gamma\,(1 - z(t)) + u(t)\, y(t),
+\end{aligned}
+\]</span></p>
+<p>avec <span class="math inline">\(\gamma \ge 0\)</span>, <span class="math inline">\(\Gamma \ge 0\)</span>, <span class="math inline">\(|u(t)| \leq 1\)</span>.</p>
+<div class="spacer-medium">
+
+</div>
+<p>⇒ <span class="color-accent-bold">Système affine mono-entrée en dimension 2</span></p>
+</div><div class="column" style="width:20%;">
+
+</div></div>
+</div>
+</div>
+</section>
+<section id="imagerie-médicale-collaboration-et-encadrement" class="slide level2">
+<h2>Imagerie médicale — collaboration et encadrement</h2>
+<p><strong>Combinaison de méthodes géométriques, numériques, LMI et formelles</strong></p>
+<ul>
+<li>Post-doc : combinaison directe/indirecte (genèse du projet ADT 2018), techniques LMI</li>
+<li>Co-encadrement du post-doc de <strong>T. Verron</strong> : méthodes formelles (bases de Gröbner)</li>
+</ul>
+<div class="spacer-small">
+
+</div>
+<div class="columns">
+<div class="column">
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, M. Claeys, O. Cots, P. Martinon</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric and numerical methods in the contrast imaging problem in NMR</p>
+</div>
+<div class="publication-card-journal">
+<p>Acta Appl. Math. (2015)</p>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. Cots, J. Rouot, <strong>T. Verron</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Time minimal saturation of a pair of spins and application in MRI</p>
+</div>
+<div class="publication-card-journal">
+<p>Math. Control Relat. Fields (2020)</p>
+</div>
+</div>
+</div>
+</div></div>
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column">
+<p><strong>Propriété de tangence au point de pré-saturation</strong></p>
+<p>Phénomène observé par <span class="color-accent-bold">T. Bayen</span> sur un modèle de bioprocédés, puis formalisé théoriquement.</p>
+<div class="spacer-medium">
+
+</div>
+<p>Apparaît également en IRM. Concerne la <span class="color-primary-bold">synthèse optimale</span> des systèmes affines mono-entrée en temps minimal.</p>
+<div class="spacer-medium">
+
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>T. Bayen, O. Cots</p>
+</div>
+<div class="publication-card-title">
+<p>Tangency property and prior-saturation points in minimal time problems in the plane</p>
+</div>
+<div class="publication-card-journal">
+<p>Acta Appl. Math. (2020)</p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/mri-tangence.svg" class="centered-image" style="width: 80%;"></p>
+</div></div>
+</section>
+<section id="imagerie-médicale-perspectives-passage-à-léchelle" class="slide level2">
+<h2>Imagerie médicale — Perspectives : passage à l’échelle</h2>
+<div class="spacer-medium">
+
+</div>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="info-box">
+<p><strong>Du modèle idéal au contrôle d’ensemble</strong></p>
+<div class="spacer-small">
+
+</div>
+<ul>
+<li><span class="color-primary-bold">Cadre idéal</span> : dimension 2 (1 spin) et 4 (2 spins)
+<ul>
+<li>Synthèse optimale complète (1 spin)</li>
+<li>Résultats fins (géométrie, LMI, méthodes formelles)</li>
+</ul></li>
+</ul>
+<div class="spacer-small">
+
+</div>
+<ul>
+<li><span class="color-accent-bold">Tentative de passage à l’échelle</span> : jusqu’à 11 spins (hal-01001975, 2014)</li>
+</ul>
+<div class="spacer-small">
+
+</div>
+<ul>
+<li><span class="color-tertiary-bold">Perspective</span> : contrôle d’ensemble
+<ul>
+<li>Grand nombre de spins</li>
+<li>Paramètres hétérogènes (inhomogénéités <span class="math inline">\(B_0\)</span>, <span class="math inline">\(B_1\)</span>)</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column">
+<p><img src="figures/mri-synthese-1spin.svg" style="width: 100%; height: auto;"></p>
+<div style="text-align: center; font-size: 0.75em; color: #6a737d; margin-top: 0.5em; font-style: italic;">
+<p>Synthèse optimale — cadre idéal en petite dimension</p>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<!-- ## Publications {data-background-color="#000000"} -->
+<!-- ONLY FOR custom-starwars.scss -->
+<div class="crawl-slide">
+<div class="crawl-container">
+<div class="crawl-content">
+<div class="crawl-category">
+Article dans une revue
+</div>
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, Y. Privat</p>
+</div>
+<div class="publication-card-title">
+<p>The Zermelo navigation problem on the 2-sphere of revolution: an optimal control perspective with applications to micromagnetism</p>
+</div>
+<div class="publication-card-journal">
+<p>Nonlinearity (2026)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, <strong>R. Dutto</strong>, S. Jan, S. Laporte</p>
+</div>
+<div class="publication-card-title">
+<p>A bilevel optimal control method and application to the hybrid electric vehicle</p>
+</div>
+<div class="publication-card-journal">
+<p>Optim. Control Appl. Meth. (2025)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>T. Bayen, A. Bouali, L. Bourdin, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Loss control regions in optimal control problems</p>
+</div>
+<div class="publication-card-journal">
+<p>J. Differential Equations (2024)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, <strong>B. Wembe</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Zermelo navigation problems on surfaces of revolution and geometric optimal control</p>
+</div>
+<div class="publication-card-journal">
+<p>ESAIM Control Optim. Calc. Var. (2023)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, J. Gergaud, <strong>D. Goubinat</strong>, <strong>B. Wembe</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Singular versus Boundary Arcs for Aircraft Trajectory Optimization in Climbing Phase</p>
+</div>
+<div class="publication-card-journal">
+<p>ESAIM: Mathematical Modelling and Numerical Analysis (2023)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, J. Gergaud, <strong>B. Wembe</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Abnormal Geodesics in 2D-Zermelo Navigation Problems in the Case of Revolution and the Fan Shape of the Small Time Balls</p>
+</div>
+<div class="publication-card-journal">
+<p>Systems &amp; Control Lett. (2022)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, <strong>B. Wembe</strong></p>
+</div>
+<div class="publication-card-title">
+<p>A Zermelo navigation problem with a vortex singularity</p>
+</div>
+<div class="publication-card-journal">
+<p>ESAIM Control Optim. Calc. Var. (2021)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>T. Bayen, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Tangency property and prior-saturation points in minimal time problems in the plane</p>
+</div>
+<div class="publication-card-journal">
+<p>Acta Appl. Math. (2020)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, J. Rouot, <strong>T. Verron</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Time minimal saturation of a pair of spins and application in Magnetic Resonance Imaging</p>
+</div>
+<div class="publication-card-journal">
+<p>Math. Control Relat. Fields (2020)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>T. Bayen, O. C, P. Gajardo</p>
+</div>
+<div class="publication-card-title">
+<p>Analysis of an Optimal Control Problem Related to the Anaerobic Digestion Process</p>
+</div>
+<div class="publication-card-journal">
+<p>J. Optim. Theory Appl. (2018)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, J. Gergaud, <strong>D. Goubinat</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Direct and indirect methods in optimal control with state constraints and the climbing trajectory of an aircraft</p>
+</div>
+<div class="publication-card-journal">
+<p>Optim. Control Appl. Meth. (2018)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric and numerical methods for a state constrained minimum time control problem of an electric vehicle</p>
+</div>
+<div class="publication-card-journal">
+<p>ESAIM Control Optim. Calc. Var. (2017)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, M. Claeys, O. C, P. Martinon</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric and numerical methods in the contrast imaging problem in nuclear magnetic resonance</p>
+</div>
+<div class="publication-card-journal">
+<p>Acta Appl. Math. (2015)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, J.-B. Pomet, N. Shcherbakova</p>
+</div>
+<div class="publication-card-title">
+<p>Riemannian metrics on 2d-manifolds related to the Euler-Poinsot rigid body motion</p>
+</div>
+<div class="publication-card-journal">
+<p>ESAIM Control Optim. Calc. Var. (2014)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric numerical methods and results in the control imaging problem in nuclear magnetic resonance</p>
+</div>
+<div class="publication-card-journal">
+<p>Math. Models Methods Appl. Sci. (2014)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, N. Shcherbakova</p>
+</div>
+<div class="publication-card-title">
+<p>The Serret-Andoyer Riemannian metric and Euler-Poinsot rigid body motion</p>
+</div>
+<div class="publication-card-journal">
+<p>Math. Control Relat. Fields (2013)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, N. Shcherbakova</p>
+</div>
+<div class="publication-card-title">
+<p>Energy minimization problem in two-level dissipative quantum control: meridian case</p>
+</div>
+<div class="publication-card-journal">
+<p>J. Math. Sci. (2013)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, S. Glaser, M. Lapert, D. Sugny, Y. Zhang</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric optimal control of the contrast imaging problem in nuclear magnetic resonance</p>
+</div>
+<div class="publication-card-journal">
+<p>IEEE Trans. Automat. Control (2012)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>J.-B. Caillau, O. C, J. Gergaud</p>
+</div>
+<div class="publication-card-title">
+<p>Differential continuation for regular optimal control problems</p>
+</div>
+<div class="publication-card-journal">
+<p>Optim. Methods Softw. (2012)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, N. Shcherbakova, D. Sugny</p>
+</div>
+<div class="publication-card-title">
+<p>The energy minimization problem for two-level dissipative quantum systems</p>
+</div>
+<div class="publication-card-journal">
+<p>J. Math. Phys. (2010)</p>
+</div>
+</div>
+</div>
+<div class="crawl-category">
+Acte de conférence
+</div>
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, <strong>R. Dutto</strong>, S. Jan, S. Laporte</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric preconditioner for indirect shooting and application to hybrid vehicle</p>
+</div>
+<div class="publication-card-journal">
+<p>IFAC-PapersOnLine (2024)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, <strong>R. Dutto</strong>, S. Jan, S. Laporte</p>
+</div>
+<div class="publication-card-title">
+<p>Generation of value function data for bilevel optimal control and application to hybrid electric vehicle</p>
+</div>
+<div class="publication-card-journal">
+<p>Mathematical Optimization for Machine Learning, De Gruyter (2024)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>N. Shcherbakova, K. Roger, J. Gergaud, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Homotopic Method for binodal curves computation in ternary liquid-liquid separation</p>
+</div>
+<div class="publication-card-journal">
+<p>Comput. Aided Chem. Eng. (2023)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>J.-B. Caillau, O. C, P. Martinon</p>
+</div>
+<div class="publication-card-title">
+<p>ct: control toolbox - Numerical tools and examples in optimal control</p>
+</div>
+<div class="publication-card-journal">
+<p>IFAC-PapersOnLine (2022)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, J. Gergaud, N. Shcherbakova</p>
+</div>
+<div class="publication-card-title">
+<p>SMITH: differential homotopy and automatic differentiation for computing thermodynamic diagrams of complex mixtures</p>
+</div>
+<div class="publication-card-journal">
+<p>Comput. Aided Chem. Eng. (2021)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, J. Gergaud, <strong>B. Wembe</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Homotopic approach for turnpike and singularly perturbed optimal control problems</p>
+</div>
+<div class="publication-card-journal">
+<p>ESAIM: ProcS (2021)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>T. Bayen, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Tangency property and prior-saturation points in planar minimal time problems</p>
+</div>
+<div class="publication-card-journal">
+<p>IFAC-PapersOnLine (2020)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>C. Balsa, O. C, J. Gergaud, <strong>B. Wembe</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Minimum energy control of passive tracers advection in point vortices flow</p>
+</div>
+<div class="publication-card-journal">
+<p>CONTROLO 2020, Springer (2020)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, J. Gergaud, <strong>D. Goubinat</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Time-optimal aircraft trajectories in climbing phase and singular perturbations</p>
+</div>
+<div class="publication-card-journal">
+<p>IFAC-PapersOnLine (2017)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, P. Delpy, J. Gergaud, <strong>D. Goubinat</strong></p>
+</div>
+<div class="publication-card-title">
+<p>On the minimum time optimal control problem of an aircraft in its climbing phase</p>
+</div>
+<div class="publication-card-journal">
+<p>EUCASS 2017 (2017)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, N. Shcherbakova</p>
+</div>
+<div class="publication-card-title">
+<p>Riemannian metrics on 2D manifolds related to the Euler-Poinsot rigid body problem</p>
+</div>
+<div class="publication-card-journal">
+<p>IEEE CDC 2013 (2013)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, M. Claeys, O. C, P. Martinon</p>
+</div>
+<div class="publication-card-title">
+<p>Comparison of numerical methods in the contrast imaging problem in NMR</p>
+</div>
+<div class="publication-card-journal">
+<p>IEEE CDC 2013 (2013)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, L. Jassionnesse</p>
+</div>
+<div class="publication-card-title">
+<p>Geometric and numerical techniques to compute conjugate and cut loci on Riemannian surfaces</p>
+</div>
+<div class="publication-card-journal">
+<p>INDAM Series vol.&nbsp;5 (2014)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, J.-B. Caillau, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Energy minimization in two-level dissipative quantum control: The integrable case</p>
+</div>
+<div class="publication-card-journal">
+<p>Discrete Contin. Dyn. Syst. suppl. (2011)</p>
+</div>
+</div>
+</div>
+<div class="crawl-category">
+Chapitre d’ouvrage
+</div>
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, J. Gergaud</p>
+</div>
+<div class="publication-card-title">
+<p>Numerical Tools for Geometric Optimal Control and the Julia control-toolbox package</p>
+</div>
+<div class="publication-card-journal">
+<p>Ivan Kupka Legacy: A Tour Through Controlled Dynamics, AIMS Sciences (2024)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>T. Bayen, A. Bouali, L. Bourdin, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>On the reduction of a spatially hybrid optimal control problem into a temporally hybrid optimal control problem</p>
+</div>
+<div class="publication-card-journal">
+<p>Ivan Kupka Legacy: A Tour Through Controlled Dynamics, AIMS Sciences (2024)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>B. Bonnard, O. C, Y. Privat, E. Trélat</p>
+</div>
+<div class="publication-card-title">
+<p>Zermelo navigation on the sphere with revolution metrics</p>
+</div>
+<div class="publication-card-journal">
+<p>Ivan Kupka Legacy: A Tour Through Controlled Dynamics, AIMS Sciences (2024)</p>
+</div>
+</div>
+</div>
+<div class="crawl-category">
+Logiciel
+</div>
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>J.-B. Caillau, O. C, J. Gergaud, P. Martinon, S. Sed</p>
+</div>
+<div class="publication-card-title">
+<p>OptimalControl.jl: a Julia package to model and solve optimal control problems with ODE’s</p>
+</div>
+<div class="publication-card-journal">
+<p>Software (2024)</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>J.-B. Caillau, O. C, J. Gergaud, P. Martinon</p>
+</div>
+<div class="publication-card-title">
+<p>OptimalControlProblems.jl: a collection of optimal control problems with ODEs in Julia</p>
+</div>
+<div class="publication-card-journal">
+<p>Software (2024)</p>
+</div>
+</div>
+</div>
+<div class="crawl-category">
+Brevet
+</div>
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, <strong>R. Dutto</strong>, M. Sans</p>
+</div>
+<div class="publication-card-title">
+<p>Procédé de résolution d’un problème de contrôle optimal</p>
+</div>
+<div class="publication-card-journal">
+<p>France, Patent n° FR3146100A1 (2023)</p>
+</div>
+</div>
+</div>
+<div class="crawl-category">
+Articles en préparation
+</div>
+<div class="publication-cards">
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>J.-B. Caillau, O. C, J. Gergaud, P. Martinon, S. Sed</p>
+</div>
+<div class="publication-card-title">
+<p>OptimalControl.jl: A Julia package for modeling and solving optimal control problems with ODEs</p>
+</div>
+<div class="publication-card-journal">
+<p>En préparation</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, M. G. Dadjo, <strong>B. Wembe</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Regularity of the value function and cut locus for Zermelo navigation problems</p>
+</div>
+<div class="publication-card-journal">
+<p>En préparation</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>A. Bouali, O. C</p>
+</div>
+<div class="publication-card-title">
+<p>Homotopy and regularization methods for optimal control on stratified domains</p>
+</div>
+<div class="publication-card-journal">
+<p>En préparation</p>
+</div>
+</div>
+<div class="publication-card">
+<div class="publication-card-authors">
+<p>O. C, <strong>R. Dutto</strong></p>
+</div>
+<div class="publication-card-title">
+<p>Geometric preconditioner for indirect optimal control shooting method</p>
+</div>
+<div class="publication-card-journal">
+<p>En préparation</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'slow',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1512,
+
+        height: 945,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
